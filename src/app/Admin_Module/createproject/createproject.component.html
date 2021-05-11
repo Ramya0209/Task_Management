@@ -1,0 +1,47 @@
+<div class="div1" fxLayoutAlign="center center">
+  <mat-card fxFlex="50">
+    <h1 style="color: rgb(40, 40, 109);">ASSIGN PROJECT</h1>
+  <form fxLayoutAlign="stretch" fxLayout="column" (ngSubmit)="onSubmit('Project Created Successfully','Dismiss')"><br>
+   
+  <p>
+    <mat-form-field appearance="fill" class="example-full-width">
+      <mat-label>Project Title</mat-label>
+      <input matInput placeholder="Enter project title" name='title'  [(ngModel)]="project.projectname" #title="ngModel">
+      <!-- <mat-hint>Enter project title</mat-hint> -->
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="fill" class="example-full-width" >
+      <mat-label>Start Date</mat-label>
+      <input matInput placeholder="Placeholder" type="date"  name='startdate'  [(ngModel)]="project.startdate" #startdate="ngModel">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="fill" class="example-full-width" >
+      <mat-label>End Date</mat-label>
+      <input matInput placeholder="Placeholder" type="date" name="enddate"  [(ngModel)]="project.enddate" #enddate="ngModel" >
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="fill" class="example-full-width" >
+      <mat-label>Priority</mat-label>
+      <input matInput placeholder="Placeholder"  name="priority"  [(ngModel)]="project.priority" #priority="ngModel" >
+    </mat-form-field>
+  </p>
+  
+  <p>
+    <mat-form-field appearance="fill" class="example-full-width">
+      <mat-label>Description</mat-label>
+      <input matInput placeholder="Enter description" type="text" name='des'  [(ngModel)]="project.description" #des="ngModel">
+    
+      <!-- <mat-hint>Enter Description</mat-hint> -->
+    </mat-form-field>
+
+  </p>
+  
+  
+  <button mat-raised-button color="primary">Save</button>
+</form>
+</mat-card>
+</div>
+
