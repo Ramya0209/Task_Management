@@ -1,4 +1,4 @@
-
+<!-- 
 <div class="div1">
  
   <mat-toolbar class="toolbar-mode">
@@ -24,8 +24,7 @@
           <mat-nav-list style="padding-left: 1.5cm;">
               <a mat-list-item  routerLink='admindashboard' style="color:rgb(231, 157, 15)">Dashboard</a>
               <a mat-list-item  routerLink='profile'style="color:rgb(231, 157, 15)">Profile</a>
-              <a mat-list-item  routerLink='assignproject' style="color:rgb(231, 157, 15)">Create Project</a>
-              <a mat-list-item  routerLink='viewproject' style="color:rgb(231, 157, 15)">View Project</a>
+              <a mat-list-item  routerLink='viewproject' style="color:rgb(231, 157, 15)">Create Project</a>
               <a mat-list-item  routerLink='adminreport' style="color:rgb(231, 157, 15)">Report</a>
               <a mat-list-item  routerLink='completion' style="color:rgb(231, 157, 15)">Completion Status</a>
               
@@ -36,4 +35,66 @@
             <router-outlet></router-outlet>
         </p>
       </mat-sidenav-content>
-  </mat-sidenav-container>
+  </mat-sidenav-container> -->
+
+
+ <nz-layout class="app-layout">
+  <nz-sider class="menu-sidebar"
+            nzCollapsible
+            nzWidth="256px"
+            nzBreakpoint="md"
+            [(nzCollapsed)]="isCollapsed"
+            [nzTrigger]="null">
+    <div class="sidebar-logo">
+      <a href="https://ng.ant.design/" target="_blank">
+        <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
+        <h1>Ant Design Of Angular</h1>
+      </a>
+    </div>
+      <ul nz-menu nzMode="inline" nzTheme="dark" [nzInlineCollapsed]="isCollapsed">
+        <li nz-menu-item  nzMatchRouter>
+          <i nz-icon nzType="mail"></i>
+          <!-- <span>Navigation One</span> -->
+          <a routerLink="viewproject">Navigation One</a>
+        </li>
+       <li nz-submenu nzOpen  nzTitle="Dashboard" nzIcon="dashboard">
+         
+        <ul> 
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/welcome">Welcome</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a>Monitor</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a>Workplace</a>
+          </li>
+         </ul>
+      </li> 
+      <li nz-submenu nzOpen nzTitle="Form" nzIcon="form">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a>Basic Form</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <div class="app-header">
+        <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+            <i class="trigger"
+               nz-icon
+               [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+            ></i>
+        </span>
+      </div>
+    </nz-header>
+    <nz-content>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+  </nz-layout>
+</nz-layout>

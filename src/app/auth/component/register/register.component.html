@@ -35,7 +35,6 @@
     <option>Admin</option>
     <option>Manager</option>
     <option>Employee</option>
-   
   </select>
   </div>
   <p class='sptag'>
@@ -53,7 +52,8 @@
 </div>
 <div class="input-wrapper">
 <mat-form-field>
-  <input matInput type="text" name='contact' required [(ngModel)]="employee.contactpreference" #contact="ngModel"  placeholder="Contact-Preferences" aria-label="contact" aria-describedby="basic-addon1"><br>
+  <input matInput type="text" name='contact' required 
+  [(ngModel)]="employee.phonenumber" #contact="ngModel"  placeholder="Phone Number" aria-label="contact" aria-describedby="basic-addon1"><br>
   <p class='sptag'>
     <span *ngIf="contact.touched && !contact.valid" >Phone number is Required </span>
     </p>
@@ -73,7 +73,7 @@
  
  
 
-<button [disabled]="!f.valid" (click)="onSubmit('Registered successfully','Dismiss')">Register</button>
+<button [disabled]="!f.valid" (click)="onSubmit('Registered successfull','Dismiss')">Register</button>
 
 </form>
 </mat-card>

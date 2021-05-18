@@ -1,47 +1,67 @@
-<div class="div1" fxLayoutAlign="center center">
-  <mat-card fxFlex="50">
-    <h1 style="color: rgb(40, 40, 109);">ASSIGN PROJECT</h1>
-  <form fxLayoutAlign="stretch" fxLayout="column" (ngSubmit)="onSubmit('Project Created Successfully','Dismiss')"><br>
-   
-  <p>
-    <mat-form-field appearance="fill" class="example-full-width">
-      <mat-label>Project Title</mat-label>
-      <input matInput placeholder="Enter project title" name='title'  [(ngModel)]="project.projectname" #title="ngModel">
-      <!-- <mat-hint>Enter project title</mat-hint> -->
+
+<div id="login" class="login-form-container">
+<mat-card>
+  <button style="border:none;background-color: transparent;float: right;" (click)="onNoClick()">   
+    <mat-icon style="float: right;color: rgb(216, 212, 203);">clear</mat-icon>
+</button>
+<br>
+    <h3 class="reg">CREATE PROJECT</h3>
+    <form  (ngSubmit)="onSubmit('Project Created Successfully','Dismiss',myForm)" #myForm="ngForm">
+      
+    <div class="input-wrapper">
+<mat-form-field  >
+  <mat-label>Project Name</mat-label>
+      <input matInput  name='title' required
+        [(ngModel)]="project.projectname" #titleCtrl="ngModel">
+      <mat-error *ngIf="titleCtrl.hasError('required')" >Project Name is required</mat-error>
     </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field appearance="fill" class="example-full-width" >
-      <mat-label>Start Date</mat-label>
-      <input matInput placeholder="Placeholder" type="date"  name='startdate'  [(ngModel)]="project.startdate" #startdate="ngModel">
+  </div><br>
+  <div class="input-wrapper">
+    <mat-form-field>
+      <mat-label>Enter a date range</mat-label>
+      <mat-date-range-input [rangePicker]="picker">
+        <input matStartDate placeholder="Start date" name="startdate" required
+        [(ngModel)]="project.startdate" #startdateCtrl="ngModel">
+        <input matEndDate placeholder="End date" name="enddate" required
+        [(ngModel)]="project.enddate" #enddateCtrl="ngModel">
+      </mat-date-range-input>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+      <mat-error *ngIf="startdateCtrl.hasError('required')" >Date Range is required</mat-error>
+
     </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field appearance="fill" class="example-full-width" >
-      <mat-label>End Date</mat-label>
-      <input matInput placeholder="Placeholder" type="date" name="enddate"  [(ngModel)]="project.enddate" #enddate="ngModel" >
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field appearance="fill" class="example-full-width" >
-      <mat-label>Priority</mat-label>
-      <input matInput placeholder="Placeholder"  name="priority"  [(ngModel)]="project.priority" #priority="ngModel" >
-    </mat-form-field>
-  </p>
-  
-  <p>
-    <mat-form-field appearance="fill" class="example-full-width">
-      <mat-label>Description</mat-label>
-      <input matInput placeholder="Enter description" type="text" name='des'  [(ngModel)]="project.description" #des="ngModel">
+</div><br>
+ <div class="input-wrapper">
+    <mat-form-field >
+  <mat-label>Priority</mat-label>
+<input matInput   name="priority"  required
+      [(ngModel)]="project.priority" #priorityCtrl="ngModel" >
+      <mat-error *ngIf="priorityCtrl.hasError('required')">Priority is required</mat-error>
+</mat-form-field>
+</div><br>
+  <div class="input-wrapper">
+    <mat-form-field  class="example-full-width">
+  <mat-label>Description</mat-label>
+<input matInput  type="text" name='des'  required
+      [(ngModel)]="project.description" #desCtrl="ngModel">
+      <mat-error *ngIf="desCtrl.hasError('required')">Description is required</mat-error>
     
       <!-- <mat-hint>Enter Description</mat-hint> -->
     </mat-form-field>
 
-  </p>
-  
-  
-  <button mat-raised-button color="primary">Save</button>
+  </div>
+  <!-- <div class="input-wrapper">
+    <mat-form-field appearance="fill">
+      <mat-label>Assigned To</mat-label>
+      <mat-select [(ngModel)]="employee.id" name="assignedto">
+        <mat-option *ngFor="let user of employee" [value]="user.id">
+          {{user.id}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div> -->
+  <button mat-raised-button class="btn" color="primary" style="margin-top: 40px;">Create</button><br>
 </form>
-</mat-card>
+</mat-card>  
 </div>
 

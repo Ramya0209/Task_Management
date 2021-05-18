@@ -1,51 +1,8 @@
 {
-  "employees": [
-    {
-      "id": "cit01",
-      "username": "Ramya",
-      "role": "Admin",
-      "contactpreference": "phone",
-      "email": "aramya0209@gmail.com",
-      "password": "12345"
-    }
-  ],
+  "employees": [],
   "Users": [],
   "projects": [
-    {
-      "id": 1,
-      "projectname": "Task Management",
-      "startdate": "2021-05-10",
-      "enddate": "2021-05-22",
-      "priority": "0",
-      "description": "web design"
-    },
-    {
-      "id": 2,
-      "projectname": "",
-      "startdate": "",
-      "enddate": "",
-      "priority": "",
-      "description": ""
-    }
+    
   ],
-  "reports": [
-    {
-      "id": 1,
-      "project_id": 0,
-      "task_id": 0,
-      "user_id": 0,
-      "project_name": "",
-      "task_name": "",
-      "progress": ""
-    },
-    {
-      "id": 2,
-      "project_id": 0,
-      "task_id": 0,
-      "user_id": 0,
-      "project_name": "",
-      "task_name": "",
-      "progress": ""
-    }
-  ]
+  "tasks": []
 }

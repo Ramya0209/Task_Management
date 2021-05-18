@@ -4,6 +4,7 @@ import { HttpClient, HttpErrorResponse,HttpHeaders } from '@angular/common/http'
 import {  Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { IProject } from "src/app/models/project.models";
+import { IEmployee } from "src/app/models/login.models";
 
 @Injectable({
     providedIn:'root'
@@ -11,6 +12,7 @@ import { IProject } from "src/app/models/project.models";
 })
 export class CreateProjectService{
     baseUrl = 'http://localhost:3000/projects';
+    url='http://localhost:3000/employees';
     constructor(private httpClient: HttpClient) {
     }
    
@@ -30,10 +32,9 @@ export class CreateProjectService{
             })
         })
         .pipe(catchError(this.handleError));
-        
-
-       
-
-   
-    }   
+        }
+    // getUserId(role:string):Observable<IEmployee>{
+    //     return this.httpClient.get<IEmployee>(`${this.baseUrl}/role=${role}`)
+    //     .pipe(catchError(this.handleError));
+    // }
 }

@@ -46,6 +46,19 @@ import { EmpReportComponent } from './Employee_Module/emp-report/emp-report.comp
 // import { EmpReportComponent } from  './emp-report/emp-report.component';
 // import { MatSnackBarModule} from '@angular/material/snack-bar';
 import { ViewprojectAdminComponent } from './Admin_Module/viewproject-admin/viewproject-admin.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatDialogRef} from '@angular/material/dialog';
+import { ViewtaskComponent } from './Manager_Module/viewtask/viewtask.component';
+import { NZ_I18N } from 'ng-zorro-antd/i18n';
+import { hi_IN } from 'ng-zorro-antd/i18n';
+import { registerLocaleData } from '@angular/common';
+import hi from '@angular/common/locales/hi';
+import { IconsProviderModule } from './icons-provider.module';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+
+registerLocaleData(hi);
+// import { MatFormFieldControl } from '@angular/material/form-field/form-field-control';
 
 
 
@@ -68,19 +81,22 @@ import { ViewprojectAdminComponent } from './Admin_Module/viewproject-admin/view
     CompletionComponent,
     AdminreportComponent,
     ViewprojectAdminComponent,
-    EmpTaskComponent
+    EmpTaskComponent,
+    ViewtaskComponent
     // EmpProjectComponent,
     // EmpReportComponent
     
   ],
   imports: [
     BrowserModule,AuthModule,SharedModule,MatSelectModule,MatSnackBarModule,
-    AppRoutingModule,FlexLayoutModule,MatGridListModule,ReactiveFormsModule,
+    AppRoutingModule,FlexLayoutModule,MatGridListModule,ReactiveFormsModule,MatDialogModule,
     FormsModule,MatCardModule,MatInputModule,MatFormFieldModule,MatTableModule ,MatRadioModule,MatDatepickerModule,MatNativeDateModule,MatCheckboxModule,
-    MatButtonModule,MatToolbarModule,MatIconModule,MatSidenavModule,MatListModule,BrowserAnimationsModule,HttpClientModule,
+    MatButtonModule,MatToolbarModule,MatIconModule,MatSidenavModule,MatListModule,BrowserAnimationsModule,HttpClientModule, IconsProviderModule, NzLayoutModule, NzMenuModule,
     
   ],
-  providers: [LoginService],
-  bootstrap: [AppComponent]
+  providers: [LoginService, { provide: NZ_I18N, useValue: hi_IN }],
+  bootstrap: [AppComponent],
+  entryComponents:[CreateProjectComponent,CreatetaskComponent]
+
 })
 export class AppModule { }

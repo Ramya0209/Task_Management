@@ -15,24 +15,25 @@ import {FormControl,FormBuilder,FormGroup, Validators} from "@angular/forms";
   
   employee:IEmployee={
     id:'',
+    dob:'',
     username:'',
+    password:'',
     role:'',
-    contactpreference:'',
     email:'',
-    password:''
+    phonenumber:'',
+    address:'',
+    state:'',
+    country:'',
+    postalcode:'',
+    qualification:'',
+    experience:''
 
   }
   
   
      
-constructor(public _loginService: LoginService,private _snackBar: MatSnackBar,
-  private route:Router,private fb:FormBuilder) 
-  {
-    this.form=this.fb.group({
-      id : new FormControl("",[Validators.required])
-
-    })
-  }
+constructor(public _loginService: LoginService,private _snackBar: MatSnackBar,private route:Router){}
+  
 
    onSubmit(message:string,action:string){
     

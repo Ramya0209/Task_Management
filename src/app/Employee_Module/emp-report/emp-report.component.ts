@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { IReport } from 'src/app/models/report.models';
@@ -21,7 +22,7 @@ report:IReport={
   }
 
   constructor(private _empreportService: EmpReportService,private router:Router,private _snackbar:MatSnackBar) { }
-  onSubmit(message:string,action:string){
+  onSubmit(message:string,action:string,form:NgForm){
 
     this._empreportService.addManagerreport(this.report).subscribe(
       (result) =>
@@ -30,6 +31,9 @@ report:IReport={
       },
       (err) => console.log(err)
       );
+      if(form.valid){
+        console.log(form.value)
+      }
   }
 
 }

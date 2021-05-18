@@ -12,11 +12,19 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 export class RegisterComponent  {
   employee:IEmployee={
     id:'',
-    username:'',
+   username:'',
+    password:'',
     role:'',
-    contactpreference:'',
     email:'',
-    password:''
+    phonenumber:'',
+    dob:'',
+    address:'',
+    state:'',
+    country:'',
+    postalcode:'',
+    qualification:'',
+    experience:''
+
 
   }
   // id=this.employee.id

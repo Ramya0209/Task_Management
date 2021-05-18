@@ -1,46 +1,139 @@
-<div class=div3><div fxLayoutAlign="center center">
-    <mat-card fxFlex="50">
-      <h1 style="color: rgb(40, 40, 109);">PROFILE</h1>
-    <form fxLayoutAlign="stretch" fxLayout="column"><br>
-    <p>
-      <mat-form-field appearance="fill">
-        <mat-label>First Name</mat-label>
-        <input matInput placeholder="Placeholder" value="">
-        <mat-hint>Your Name</mat-hint>
-      </mat-form-field>
-    </p>
-    <p>
-      <mat-form-field appearance="fill">
-        <mat-label>Last Name</mat-label>
-        <input matInput placeholder="Placeholder" value="">
-        <mat-hint>Your last Name</mat-hint>
-      </mat-form-field>
-    </p>
-    <p>
-      <mat-form-field appearance="fill">
-        <mat-label>DOB</mat-label>
-        <input matInput placeholder="Placeholder" type="date">
-      </mat-form-field>
-    </p>
-    <p>
-      <mat-form-field appearance="fill">
-        <mat-label>Phone Number</mat-label>
-        <input matInput placeholder="Placeholder" value="">
+<mat-card>
+  <div class="row" >
+   
+    <div class="col-md-4" >
       
-        <mat-hint>phone number</mat-hint>
-      </mat-form-field>
-    </p>
-    <p>
-      <mat-form-field appearance="fill">
-        <mat-label>Email</mat-label>
-        <input matInput placeholder="Placeholder" type="email" value="">
+      <mat-card style="float: left;border:none;position: fixed;width:25%;margin-top:30px;margin-left: 10px;margin-right: 10px;">
+       
+        <div class="image" style="padding-left: 3px;">
+          
+          <img src="../../assets/images/profile1.png" width="160px" height="160px" style="justify-content: center;align-items: center;display: flex;margin-left: 80px;margin-top: 5px;">
+        </div>
+        <div style="padding:40px;">
+        
+        <h3 class="card-title" style="color: rgb(113, 114, 121);letter-spacing: 1px;text-align: center;">Cybervault Innovations & Technologies Pvt Ltd</h3>
+  <a href="https://www.facebook.com/CyberVaultInnovations/" target="_blank">
+    <button style="float: left;margin-left: 40px; border:none;background-color: transparent;">
+      <img src="../../assets/images/fb.png" style="width:30px; height:30px;border-radius: 10%;border-color: transparent;" >
+    </button>
+  </a>
+  <a href="https://twitter.com/cybervaultltd" target="_blank">
+    <button style="float:left;margin-left: 10px; border:none;background-color: transparent;">
+      <img src="../../assets/images/twetter.png" style="width:30px; height:30px;border-radius: 10%;border-color: transparent;">
+    </button>
+  </a>
+  <a href="https://sg.linkedin.com/company/cybervault-innovations-technologies" target="_blank">
+     <button style="float:left;margin-left: 10px; border:none;background-color: transparent;">
+      <img src="../../assets/images/linkedin.png" style="width:30px; height:30px;border-radius: 10%;border-color: transparent;" >
+    </button>
+  </a>
+  
+      </div>
       
-        <mat-hint>Your email</mat-hint>
-      </mat-form-field>
+      </mat-card>
+      </div>
+   
+   <mat-card style="float: right;width:61%;margin-left: 20px;">
+    
+      
+        <div class="card-header">
+          <h3 class="card-title" style="color: rgb(50, 59, 139);letter-spacing: 2px;">Complete Your Profile</h3>
+          <mat-icon style="float:right;margin-top:-40px">arrow_drop_down</mat-icon> </div>
+        <div class="card-body" style="margin-top: 10px;">
+          <form (ngSubmit)="onSubmit('Updated Successfully','Dismiss',myForm)" #myForm="ngForm">
+            <div class="input-wrapper" style="width:45%">
+            <mat-form-field style="width:280px" >
+              <mat-label>Name</mat-label>
+              <input matInput [(ngModel)]="employee.username"  name="name" #nameCtrl="ngModel" required>
+        <mat-error *ngIf="nameCtrl.hasError('required')">Name is required</mat-error>
 
-    </p>
-    <button mat-raised-button color="primary">Save</button>
-  </form>
+            </mat-form-field>
+          </div>
+          <div class="input-wrapper" style="width:49%;margin-left: 25px">
+            <mat-form-field style="width:400px" >
+              <mat-label>User ID</mat-label>
+              <input matInput name="id" [(ngModel)]="employee.id" #idCtrl="ngModel" required>
+        <mat-error *ngIf="idCtrl.hasError('required')">User ID is required</mat-error>
+
+            </mat-form-field>
+          </div>
+          <div class="input-wrapper" style="width:98%">
+            <mat-form-field  style="width:350px">
+              <mat-label>Email</mat-label>
+              <input matInput name="email" [(ngModel)]="employee.email" #emailCtrl="ngModel" required>
+        <mat-error *ngIf="emailCtrl.hasError('required')">E-Mail is required</mat-error>
+            
+            </mat-form-field>
+          </div>
+          <div class="input-wrapper" style="width:40%">
+            <mat-form-field  >
+              
+              <input type="date" matInput placeholder="DOB"
+               name="dob" [(ngModel)]="employee.dob" #dobCtrl="ngModel" required>
+        <mat-error *ngIf="dobCtrl.hasError('required')">DOB is required</mat-error>
+
+            </mat-form-field>
+          </div>
+          <div class="input-wrapper" style="width:55%;margin-left: 25px;">
+            <mat-form-field  >
+              <mat-label>Phone Number</mat-label>
+              <input matInput name="phonenumber" [(ngModel)]="employee.phonenumber" #phonenumberCtrl="ngModel" required>
+              <mat-error *ngIf="phonenumberCtrl.hasError('required')">Phone Number is required</mat-error>
+
+            </mat-form-field>
+          </div>
+          <div class="input-wrapper" style="width:98%">
+            <mat-form-field  style="width:350px">
+              <mat-label>Address</mat-label>
+              <input matInput name="address" [(ngModel)]="employee.address" #addressCtrl="ngModel" required>
+              <mat-error *ngIf="addressCtrl.hasError('required')">Address is required</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="input-wrapper" style="width:32%">
+  
+            <mat-form-field  >
+              <mat-label>state</mat-label>
+              <input  matInput name="state" [(ngModel)]="employee.state" #stateCtrl="ngModel" required>
+              <mat-error *ngIf="stateCtrl.hasError('required')">State is required</mat-error>
+
+            </mat-form-field>
+          </div>
+          <div class="input-wrapper" style="width:30%;margin-left: 20px;">
+            <mat-form-field  >
+              <mat-label>Country</mat-label>
+              <input  matInput name="country" [(ngModel)]="employee.country" #countryCtrl="ngModel" required>
+              <mat-error *ngIf="countryCtrl.hasError('required')">Country is required</mat-error>
+
+            </mat-form-field>
+          </div>
+          <div class="input-wrapper" style="width:30%;margin-left: 20px;">
+            <mat-form-field  >
+              <mat-label>Postal code</mat-label>
+              <input  matInput name="post" [(ngModel)]="employee.postalcode" #postCtrl="ngModel" required>
+              <mat-error *ngIf="postCtrl.hasError('required')">Postal Code is required</mat-error>
+
+            </mat-form-field>
+          </div>
+          <div class="input-wrapper" style="width:49%">
+            <mat-form-field >
+              <mat-label>Qualification</mat-label>
+              <input matInput name="qualification" [(ngModel)]="employee.qualification" #qualificationCtrl="ngModel" required>
+              <mat-error *ngIf="qualificationCtrl.hasError('required')">Qualification is required</mat-error>
+
+            </mat-form-field>
+          </div>
+          <div class="input-wrapper" style="margin-left: 10px;width:49%">
+            <mat-form-field  >
+              
+             <mat-label>Experience</mat-label>
+              <input matInput name="experience" [(ngModel)]="employee.experience" #experienceCtrl="ngModel" required>
+              <mat-error *ngIf="experienceCtrl.hasError('required')">Experience is required</mat-error>
+
+            </mat-form-field>
+          </div>
+            <button class="btn" mat-raised-button style="float:right">Update</button>
+          </form>
+        </div>
+    </mat-card>
+</div>
   </mat-card>
-</div>
-</div>

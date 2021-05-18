@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./manager.component.scss']
 })
 export class ManagerComponent implements OnInit {
+  isCollapsed = false;
 
   constructor() { }
 

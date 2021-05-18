@@ -1,3 +1,16 @@
+// import { NgModule } from '@angular/core';
+// import { Routes, RouterModule } from '@angular/router';
+
+// const routes: Routes = [
+//   { path: '', pathMatch: 'full', redirectTo: '/welcome' },
+//   { path: 'welcome', loadChildren: () => import('./pages/welcome/welcome.module').then(m => m.WelcomeModule) }
+// ];
+
+// @NgModule({
+//   imports: [RouterModule.forRoot(routes)],
+//   exports: [RouterModule]
+// })
+// export class AppRoutingModule { }
 import { NgModule } from '@angular/core';
 import { ChildrenOutletContexts, RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './Admin_Module/admin/admin.component';
@@ -6,7 +19,7 @@ import { ManagerDashboardComponent } from './Manager_Module/manager-dashboard/ma
 import { ManagerComponent } from './Manager_Module/manager/manager.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AdminDashboardComponent} from './Admin_Module/admin-dashboard/admin-dashboard.component'
-import { EmployeeDashboardComponent} from './Employee_Module/employee-dashboard/employee-dashboard.component';
+import { EmployeeDashboardComponent} from './Employee_Module/employee-dashboard/employee-dashboard.component'
 import { CreatetaskComponent } from './Manager_Module/createtask/createtask.component';
 import { ViewprojectComponent } from './Manager_Module/viewproject/viewproject.component';
 import { CreateProjectComponent } from './Admin_Module/createproject/createproject.component';
@@ -16,10 +29,8 @@ import {ManagerreportComponent} from './Manager_Module/managerreport/managerrepo
 // import { HeaderComponent } from './shared/components/header/header.component';
 import {LoginComponent} from './auth/component/login/login.component';
 import {EmpReportComponent} from  './Employee_Module/emp-report/emp-report.component';
-import { ViewprojectAdminComponent } from './Admin_Module/viewproject-admin/viewproject-admin.component';
-import { EmpTaskComponent } from './Employee_Module/emp-task/emp-task.component';
-import { EmpreportComponent } from './Manager_Module/empreport/empreport.component';
-
+import {EmpTaskComponent} from './Employee_Module/emp-task/emp-task.component';
+import { ViewprojectAdminComponent} from './Admin_Module/viewproject-admin/viewproject-admin.component';
 const routes: Routes = [
   {
     path:'admin',component:AdminComponent,
@@ -27,8 +38,7 @@ const routes: Routes = [
       { path:'',component:AdminDashboardComponent},
       {path: 'admindashboard', component:AdminDashboardComponent },
       {path: 'profile', component:ProfileComponent },
-      {path: 'assignproject', component:CreateProjectComponent },
-      {path: 'viewproject', component: ViewprojectAdminComponent},
+      {path: 'viewprojectadmin', component:ViewprojectAdminComponent },
       {path: 'adminreport', component:AdminreportComponent },
       {path: 'completion', component:CompletionComponent },  
     ]
@@ -39,14 +49,12 @@ const routes: Routes = [
     
     {path: 'managerdashboard', component:ManagerDashboardComponent },
     {path:'profile',component:ProfileComponent},
-    {path:'viewproject',component:ViewprojectComponent},
     {path:'newtask',component:CreatetaskComponent },
+    {path:'viewproject',component:ViewprojectComponent},
     {path:'managerreport',component:ManagerreportComponent},
-    {path:'empreport',component:EmpreportComponent},
     { path:'',component:ManagerDashboardComponent},
   ]
 },
-
 
 
 
@@ -69,6 +77,9 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  entryComponents:[ViewprojectAdminComponent,CreatetaskComponent]
 })
 export class AppRoutingModule { }
+
+

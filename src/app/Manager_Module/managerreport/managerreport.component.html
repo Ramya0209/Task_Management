@@ -1,33 +1,24 @@
-
-<div class="div1" fxLayoutAlign="center center">
-  <mat-card fxFlex="50">
-    <h1 style="color: rgb(40, 40, 109);">REPORT</h1>
-  <form fxLayoutAlign="stretch" fxLayout="column" (ngSubmit)="onSubmit('Submitted','Dismiss')"><br>
-   
-  <p>
-    <mat-form-field appearance="fill" class="example-full-width">
-      <mat-label>Project Name</mat-label>
-      <input matInput placeholder="Enter project title" name='projectname'  [(ngModel)]="report.project_name" #projectname="ngModel">
-      <!-- <mat-hint>Enter project title</mat-hint> -->
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field appearance="fill" class="example-full-width" >
-      <mat-label>Task Name</mat-label>
-      <input matInput placeholder="Placeholder"   name='taskname'  [(ngModel)]="report.task_name" #taskname="ngModel">
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field appearance="fill" class="example-full-width" >
-      <mat-label>Progress</mat-label>
-      <input matInput placeholder="Placeholder"  name="progress"  [(ngModel)]="report.progress" #progress="ngModel" >
-    </mat-form-field>
-  </p>
+<div id="login" class="login-form-container">
+  <mat-card>
+      <h3 class="reg">REPORT</h3>
+    <form  (ngSubmit)="onSubmit('Submitted','Dismiss',myForm)" #myForm="ngForm"><br>
+      <div class="input-wrapper">
+  <mat-form-field  >
+        <input matInput placeholder="Project Name" name='title' required
+          [(ngModel)]="report.project_name" #titleCtrl="ngModel" >
+        <mat-error *ngIf="titleCtrl.hasError('required')" >Project Name is required</mat-error>
+      </mat-form-field>
+    </div><br>
+    <div class="input-wrapper">
+<mat-form-field  >
+        <input matInput placeholder="Progress" name='progress' required
+          [(ngModel)]="report.progress" #progressCtrl="ngModel" >
+        <mat-error *ngIf="progressCtrl.hasError('required')">Progress is required</mat-error>
+      </mat-form-field>
+    </div><br>
+  <button mat-raised-button color="primary" style="margin-top: 40px;">Submit</button><br>
+  </form>
+  </mat-card>  
+  </div>
   
   
-  
-  <button mat-raised-button color="primary">Save</button>
-</form>
-</mat-card>
-
-</div>

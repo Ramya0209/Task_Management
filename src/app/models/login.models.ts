@@ -1,8 +1,15 @@
 export interface IEmployee{
     id:string;
     username:string;
+    dob:string,
+    phonenumber:string;
+    address:string;
+    state:string;
+    country:string;
+    postalcode:string;
+    qualification:string;
+    experience:string;
     role:string;
-    contactpreference:string;
     email:string;
     password:string;
 }
