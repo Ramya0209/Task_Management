@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-manager',
@@ -8,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class ManagerComponent implements OnInit {
   isCollapsed = false;
 
-  constructor() { }
+  constructor(private route:Router) { }
 
   ngOnInit(): void {
   }
-
+logout(){
+  this.route.navigate(['/login']);
+}
 }

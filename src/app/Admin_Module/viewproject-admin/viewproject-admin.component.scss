@@ -34,7 +34,7 @@ table{
    margin-left: 5%;
     width: 90%;
     padding-left: 10px;
-    height:18%;
+    height:20%;
      box-shadow: 0px 0px 35px rgb(0 0 0 / 14%);
    
       border-style:outset;
@@ -44,6 +44,13 @@ table{
   border-left-color: rgb(243, 141, 8);
    border-left-width: 20px;
     
+}
+.spantag{
+  color: #26253c;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 13px;
+  margin-bottom: 20px;
 }
 // .mat-dialog-container{
 //     padding: 0px;

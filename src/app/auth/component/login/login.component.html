@@ -7,12 +7,11 @@
 	   <div >
 	<div class="input-wrapper"> 
 	<mat-form-field>
-	<input matInput   name="id" required [(ngModel)]="employee.id" #id="ngModel"
+	<input matInput   name="id" required [(ngModel)]="employee.id" #idCtrl="ngModel"
 	   placeholder="User-Id" aria-label="UserId" 
 	 aria-describedby="basic-addon1"><br>
-	  <p class="spantag">
-	 <span *ngIf="id.touched && !id.valid">User-Id is Required</span>
-	</p> 
+	 <mat-error *ngIf="idCtrl.hasError('required')">Progress is required</mat-error>
+
 </mat-form-field>
 </div> 
 
@@ -30,7 +29,7 @@
  <div class="forgot">
   <a routerLink='/resetpassword' routerLinkActive='Active'>Forgot password ?</a>
   </div>
-<button mat-button (click)="onSubmit('Logged in','Dismiss')"  type="submit" [disabled]="!f.valid" >Login</button>
+<button mat-button (click)="onSubmit('Logged in','Dismiss',f)"  type="submit" [disabled]="!f.valid" >Login</button>
 </div>
 <span class="orPart">-----------------or-----------------</span>
 
@@ -55,3 +54,27 @@
 	</fieldset>
 	</form>
   </div> -->
+  <!-- <div id="login" class="login-form-container">
+	<mat-card>
+		<h3 class="reg">REPORT</h3>
+	  <form  (ngSubmit)="onSubmit('Submitted','Dismiss',myForm)" #myForm="ngForm"><br>
+		<div class="input-wrapper">
+	<mat-form-field  >
+		  <input matInput placeholder="Project Name" name='title' required
+			[(ngModel)]="employee.username" #titleCtrl="ngModel" >
+		  <mat-error *ngIf="titleCtrl.touched && titleCtrl.errors?.required" >Project Name is required</mat-error>
+		</mat-form-field>
+	  </div><br>
+	  <div class="input-wrapper">
+  <mat-form-field  >
+		  <input matInput placeholder="Progress" name='progress' required
+			[(ngModel)]="employee.password" #progressCtrl="ngModel" >
+		  <mat-error *ngIf="progressCtrl.hasError('required')">Progress is required</mat-error>
+		</mat-form-field>
+	  </div><br>
+	<button mat-raised-button color="primary" style="margin-top: 40px;">Submit</button><br>
+	</form>
+	</mat-card>  
+	</div> -->
+	
+	

@@ -1,9 +1,9 @@
-<mat-card>
+  
   <div class="row" >
    
     <div class="col-md-4" >
       
-      <mat-card style="float: left;border:none;position: fixed;width:25%;margin-top:30px;margin-left: 10px;margin-right: 10px;">
+      <mat-card style="float: left;border:none;position: fixed;width:25%;margin-top:30px;margin-left: 0px;margin-right: 35px;">
        
         <div class="image" style="padding-left: 3px;">
           
@@ -33,35 +33,30 @@
       </mat-card>
       </div>
    
-   <mat-card style="float: right;width:61%;margin-left: 20px;">
+   <mat-card style="float: right;width:61%;margin-left: 30px;">
     
       
         <div class="card-header">
           <h3 class="card-title" style="color: rgb(50, 59, 139);letter-spacing: 2px;">Complete Your Profile</h3>
           <mat-icon style="float:right;margin-top:-40px">arrow_drop_down</mat-icon> </div>
         <div class="card-body" style="margin-top: 10px;">
-          <form (ngSubmit)="onSubmit('Updated Successfully','Dismiss',myForm)" #myForm="ngForm">
+          <form (ngSubmit)="onSubmit('Updated Successfully','Dismiss')" >
             <div class="input-wrapper" style="width:45%">
             <mat-form-field style="width:280px" >
-              <mat-label>Name</mat-label>
-              <input matInput [(ngModel)]="employee.username"  name="name" #nameCtrl="ngModel" required>
-        <mat-error *ngIf="nameCtrl.hasError('required')">Name is required</mat-error>
+            <input matInput [(ngModel)]="loggedInEmployee.username"  name="name" #name="ngModel" >
 
             </mat-form-field>
           </div>
           <div class="input-wrapper" style="width:49%;margin-left: 25px">
             <mat-form-field style="width:400px" >
-              <mat-label>User ID</mat-label>
-              <input matInput name="id" [(ngModel)]="employee.id" #idCtrl="ngModel" required>
-        <mat-error *ngIf="idCtrl.hasError('required')">User ID is required</mat-error>
+              <input matInput name="id" [(ngModel)]="loggedInEmployee.id" #idCtrl="ngModel" >
 
             </mat-form-field>
           </div>
           <div class="input-wrapper" style="width:98%">
             <mat-form-field  style="width:350px">
-              <mat-label>Email</mat-label>
-              <input matInput name="email" [(ngModel)]="employee.email" #emailCtrl="ngModel" required>
-        <mat-error *ngIf="emailCtrl.hasError('required')">E-Mail is required</mat-error>
+              
+              <input matInput name="email" [(ngModel)]="loggedInEmployee.email" #emailCtrl="ngModel" >
             
             </mat-form-field>
           </div>
@@ -69,56 +64,49 @@
             <mat-form-field  >
               
               <input type="date" matInput placeholder="DOB"
-               name="dob" [(ngModel)]="employee.dob" #dobCtrl="ngModel" required>
-        <mat-error *ngIf="dobCtrl.hasError('required')">DOB is required</mat-error>
+               name="dob" [(ngModel)]="employee.dob" #dobCtrl="ngModel" >
 
             </mat-form-field>
           </div>
           <div class="input-wrapper" style="width:55%;margin-left: 25px;">
             <mat-form-field  >
-              <mat-label>Phone Number</mat-label>
-              <input matInput name="phonenumber" [(ngModel)]="employee.phonenumber" #phonenumberCtrl="ngModel" required>
-              <mat-error *ngIf="phonenumberCtrl.hasError('required')">Phone Number is required</mat-error>
+             
+              <input matInput name="phonenumber" [(ngModel)]="loggedInEmployee.phonenumber" #phonenumberCtrl="ngModel" >
 
             </mat-form-field>
           </div>
           <div class="input-wrapper" style="width:98%">
             <mat-form-field  style="width:350px">
               <mat-label>Address</mat-label>
-              <input matInput name="address" [(ngModel)]="employee.address" #addressCtrl="ngModel" required>
-              <mat-error *ngIf="addressCtrl.hasError('required')">Address is required</mat-error>
+              <input matInput name="address" [(ngModel)]="employee.address" #addressCtrl="ngModel" >
             </mat-form-field>
           </div>
           <div class="input-wrapper" style="width:32%">
   
             <mat-form-field  >
               <mat-label>state</mat-label>
-              <input  matInput name="state" [(ngModel)]="employee.state" #stateCtrl="ngModel" required>
-              <mat-error *ngIf="stateCtrl.hasError('required')">State is required</mat-error>
+              <input  matInput name="state" [(ngModel)]="employee.state" #stateCtrl="ngModel" >
 
             </mat-form-field>
           </div>
           <div class="input-wrapper" style="width:30%;margin-left: 20px;">
             <mat-form-field  >
               <mat-label>Country</mat-label>
-              <input  matInput name="country" [(ngModel)]="employee.country" #countryCtrl="ngModel" required>
-              <mat-error *ngIf="countryCtrl.hasError('required')">Country is required</mat-error>
+              <input  matInput name="country" [(ngModel)]="employee.country" #countryCtrl="ngModel" >
 
             </mat-form-field>
           </div>
           <div class="input-wrapper" style="width:30%;margin-left: 20px;">
             <mat-form-field  >
               <mat-label>Postal code</mat-label>
-              <input  matInput name="post" [(ngModel)]="employee.postalcode" #postCtrl="ngModel" required>
-              <mat-error *ngIf="postCtrl.hasError('required')">Postal Code is required</mat-error>
+              <input  matInput name="post" [(ngModel)]="employee.postalcode" #postCtrl="ngModel" >
 
             </mat-form-field>
           </div>
           <div class="input-wrapper" style="width:49%">
             <mat-form-field >
               <mat-label>Qualification</mat-label>
-              <input matInput name="qualification" [(ngModel)]="employee.qualification" #qualificationCtrl="ngModel" required>
-              <mat-error *ngIf="qualificationCtrl.hasError('required')">Qualification is required</mat-error>
+              <input matInput name="qualification" [(ngModel)]="employee.qualification" #qualificationCtrl="ngModel" >
 
             </mat-form-field>
           </div>
@@ -126,8 +114,7 @@
             <mat-form-field  >
               
              <mat-label>Experience</mat-label>
-              <input matInput name="experience" [(ngModel)]="employee.experience" #experienceCtrl="ngModel" required>
-              <mat-error *ngIf="experienceCtrl.hasError('required')">Experience is required</mat-error>
+              <input matInput name="experience" [(ngModel)]="employee.experience" #experienceCtrl="ngModel" >
 
             </mat-form-field>
           </div>
@@ -136,4 +123,4 @@
         </div>
     </mat-card>
 </div>
-  </mat-card>
+  

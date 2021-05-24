@@ -123,8 +123,11 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    
   }
-  
+  .ant-layout-sider-children {
+    background-color: yellow;
+  }
   .app-layout {
     height: 100vh;
   }
@@ -145,7 +148,7 @@
   }
   
   .trigger:hover {
-    color: #1890ff;
+    color: #ff8818;
   }
   
   .sidebar-logo {
@@ -197,5 +200,24 @@
     padding: 24px;
     background: #fff;
     height: 100%;
+  }
+  .nz-menu-item{
+    background-color: transparent;
+   
+  }
+  a{
+    margin-left: 33px;
+  }
+  li{
+    i{
+      color:rgb(255, 153, 0);
+    }
+  }
+  .spantag{
+    color: #26253c;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 13px;
+    margin-bottom: 20px;
   }
   

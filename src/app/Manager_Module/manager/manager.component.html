@@ -1,72 +1,45 @@
-<!-- <mat-toolbar class="toolbar-mode">
-    
-    <img style="width:250px" src="https://www.smartclaims.asia/assets/images/logo.png" alt="cybervault">
-    <span class="example-spacer"></span>
-    <div class="search-group">
-        <input type="text" class="search-input" placeholder="Search project · · ·">
-        <button class="search-btn">
-            <mat-icon>search</mat-icon>
-        </button>
-      </div>
-      <div class="make-button">
-    <button style="background-color: rgb(19, 19, 105)" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon style="color:rgb(231, 157, 15)">person</mat-icon>
-    </button>
-    </div>
-    
-  </mat-toolbar>
-  <mat-sidenav-container>
-    <mat-sidenav style="width:280px;background-color: rgb(7, 7, 61);" mode="side" opened>
-      <mat-nav-list style="padding-left: 1.5cm;">
-              <a mat-list-item  routerLink='managerdashboard' style="color:rgb(231, 157, 15)">Dashboard</a>
-              <a mat-list-item routerLink='profile' style="color:rgb(231, 157, 15)">Profile</a>
-              <a mat-list-item routerLink="viewproject" style="color:rgb(231, 157, 15)">View Project</a>
-              <a mat-list-item routerLink="newtask" style="color:rgb(231, 157, 15)">Task</a>
-              <a mat-list-item routerLink="managerreport" style="color:rgb(231, 157, 15)">Report</a>
-              <a mat-list-item routerLink="empreport" style="color:rgb(231, 157, 15)">Employee Report</a>
 
-            </mat-nav-list>
-      </mat-sidenav>
-      <mat-sidenav-content>
-          <p style="height:557px">
-            <router-outlet></router-outlet>
-        </p>
-      </mat-sidenav-content>
-  </mat-sidenav-container> -->
+ 
   <nz-layout class="app-layout">
     <nz-sider class="menu-sidebar"
               nzCollapsible
-              nzWidth="256px"
+              nzWidth="300px"
               nzBreakpoint="md"
               [(nzCollapsed)]="isCollapsed"
               [nzTrigger]="null">
-      <div class="sidebar-logo">
-        <a href="https://ng.ant.design/" target="_blank">
-          <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
-          <h1>Ant Design Of Angular</h1>
+      <div class="sidebar-logo" style="background-color: white;">
+        <a href="https://ng.ant.design/" target="_blank" >
+         
+           <img src="https://www.smartclaims.asia/assets/images/logo.png" alt="logo" style="width:170px;height:40px;padding-right: -20px;padding-left: 23px;"> 
+           
         </a>
       </div>
       <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-        <li nz-menu-item  nzTitle="Dashboard" nzIcon="dashboard">
-          <ul>
-            <li nz-menu-item nzMatchRouter>
-              <a routerLink="/welcome">Welcome</a>
-            </li>
-            <li nz-menu-item nzMatchRouter>
-              <a>Monitor</a>
-            </li>
-            <li nz-menu-item nzMatchRouter>
-              <a>Workplace</a>
-            </li>
-          </ul>
-        </li>
-        <li nz-submenu nzOpen nzTitle="Form" nzIcon="form">
-          <ul>
-            <li nz-menu-item nzMatchRouter>
-              <a>Basic Form</a>
-            </li>
-          </ul>
-        </li>
+          <li nz-menu-item  nzMatchRouter >
+            <i nz-icon nzType="dashboard"></i>
+            <a routerLink="managerdashboard">Dashboard</a>
+          </li>
+          <li nz-menu-item  nzMatchRouter >
+            <i nz-icon nzType="user"></i>
+            <a routerLink="profile">Profile</a>
+          </li>
+          <li nz-menu-item  nzMatchRouter >
+            <i nz-icon nzType="table"></i>
+            <a routerLink="viewproject">View Project</a>
+          </li>
+          <li nz-menu-item  nzMatchRouter >
+            <i nz-icon nzType="form"></i>
+            <a routerLink="newtask">Task</a>
+          </li>
+          
+          <li nz-menu-item  nzMatchRouter >
+            <i nz-icon nzType="edit"></i>
+            <a routerLink="managerreport"> Report</a>
+          </li>
+          <li nz-menu-item  nzMatchRouter >
+            <i nz-icon nzType="table"></i>
+            <a routerLink="employeereport">Employee Report</a>
+          </li>
       </ul>
     </nz-sider>
     <nz-layout>
@@ -77,6 +50,9 @@
                  nz-icon
                  [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
               ></i>
+          </span>
+          <span style="float: right;padding-right: 60px;">
+            <i nz-icon nzType="logout" nzTheme="outline" (click)="logout()"></i>
           </span>
         </div>
       </nz-header>

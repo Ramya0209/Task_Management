@@ -31,7 +31,10 @@ import {LoginComponent} from './auth/component/login/login.component';
 import {EmpReportComponent} from  './Employee_Module/emp-report/emp-report.component';
 import {EmpTaskComponent} from './Employee_Module/emp-task/emp-task.component';
 import { ViewprojectAdminComponent} from './Admin_Module/viewproject-admin/viewproject-admin.component';
+import { ViewtaskComponent } from './Manager_Module/viewtask/viewtask.component';
+import { EmpreportComponent } from './Manager_Module/empreport/empreport.component';
 const routes: Routes = [
+  
   {
     path:'admin',component:AdminComponent,
     children: [
@@ -46,12 +49,13 @@ const routes: Routes = [
 {
   path: 'manager',component: ManagerComponent,
   children: [
-    
+   
     {path: 'managerdashboard', component:ManagerDashboardComponent },
     {path:'profile',component:ProfileComponent},
-    {path:'newtask',component:CreatetaskComponent },
+    {path:'newtask',component:ViewtaskComponent },
     {path:'viewproject',component:ViewprojectComponent},
     {path:'managerreport',component:ManagerreportComponent},
+    {path:"employeereport",component:EmpreportComponent    },
     { path:'',component:ManagerDashboardComponent},
   ]
 },

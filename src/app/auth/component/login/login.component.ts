@@ -3,7 +3,8 @@ import { LoginService} from './login.service';
 import { Router} from '@angular/router';
 import { IEmployee} from 'src/app/models/login.models';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import {FormControl,FormBuilder,FormGroup, Validators} from "@angular/forms";
+import {FormControl,FormBuilder,FormGroup, Validators, NgForm} from "@angular/forms";
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -32,10 +33,10 @@ import {FormControl,FormBuilder,FormGroup, Validators} from "@angular/forms";
   
   
      
-constructor(public _loginService: LoginService,private _snackBar: MatSnackBar,private route:Router){}
+constructor(public _loginService: LoginService,private _snackBar: MatSnackBar,private route:Router,private _userService:UserService){}
   
 
-   onSubmit(message:string,action:string){
+   onSubmit(message:string,action:string,form:NgForm){
     
 
   this._loginService.getEmployee(this.employee.id,this.employee.password).subscribe(
@@ -48,6 +49,7 @@ constructor(public _loginService: LoginService,private _snackBar: MatSnackBar,pr
         this.employee.password="";
       }
       else{
+        this._userService.setLoggedInEmployee(response[0]);
         
         this.employee=response[0];
         this._snackBar.open(message,action,{duration:2000});
@@ -69,5 +71,8 @@ constructor(public _loginService: LoginService,private _snackBar: MatSnackBar,pr
     },
     (err) => console.log(err)
     );
+    if(form.valid){
+      console.log(form.value)
+    }
 }
 }

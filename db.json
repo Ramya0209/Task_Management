@@ -1,8 +1,52 @@
 {
-  "employees": [],
+  "employees": [
+    {
+      "id": "10",
+      "username": "padma",
+      "password": "12345",
+      "role": "Manager",
+      "email": "davidmanopadma123@gmail.com",
+      "phonenumber": "6374274938",
+      "dob": "",
+      "address": "",
+      "state": "",
+      "country": "",
+      "postalcode": "",
+      "qualification": "",
+      "experience": ""
+    }
+  ],
   "Users": [],
   "projects": [
-    
+    {
+      "id": 1,
+      "projectname": "angular",
+      "startdate": "2021-05-01T18:30:00.000Z",
+      "enddate": "2021-05-11T18:30:00.000Z",
+      "priority": "1",
+      "description": "web designing"
+    }
   ],
-  "tasks": []
+  "tasks": [
+    {
+      "id": 1,
+      "projectname": "angular",
+      "taskname": "ang1",
+      "startdate": "2021-05-09T18:30:00.000Z",
+      "enddate": "2021-05-12T18:30:00.000Z",
+      "priority": "1",
+      "description": "task"
+    }
+  ],
+  "reports": [
+    {
+      "id": 1,
+      "project_id": 0,
+      "task_id": 0,
+      "user_id": 0,
+      "project_name": "angular",
+      "task_name": "",
+      "progress": "hai"
+    }
+  ]
 }

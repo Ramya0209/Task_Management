@@ -1,4 +1,4 @@
-<mat-toolbar class="toolbar-mode">
+<!-- <mat-toolbar class="toolbar-mode">
     
     <img style="width:250px" src="https://www.smartclaims.asia/assets/images/logo.png" alt="cybervault">
     <span class="example-spacer"></span>
@@ -29,4 +29,62 @@
             <router-outlet></router-outlet>
         </p>
       </mat-sidenav-content>
-  </mat-sidenav-container>
+  </mat-sidenav-container> -->
+  
+ <nz-layout class="app-layout">
+  <nz-sider class="menu-sidebar"
+            nzCollapsible
+            nzWidth="300px"
+            nzBreakpoint="md"
+            [(nzCollapsed)]="isCollapsed"
+            [nzTrigger]="null">
+    <div class="sidebar-logo" style="background-color: white;">
+      <a href="https://ng.ant.design/" target="_blank" >
+       
+         <img src="https://www.smartclaims.asia/assets/images/logo.png" alt="logo" style="width:170px;height:40px;padding-right: -20px;padding-left: 23px;"> 
+         
+      </a>
+    </div>
+      <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+          <li nz-menu-item  nzMatchRouter >
+            <i nz-icon nzType="dashboard"></i>
+            <a routerLink="employeedashboard">Dashboard</a>
+          </li>
+          <li nz-menu-item  nzMatchRouter >
+            <i nz-icon nzType="mail"></i>
+            <a routerLink="profile">Profile</a>
+          </li>
+         
+          <li nz-menu-item  nzMatchRouter >
+            <i nz-icon nzType="table"></i>
+            <a routerLink="task">View Task</a>
+          </li>
+          
+          <li nz-menu-item  nzMatchRouter >
+            <i nz-icon nzType="form"></i>
+            <a routerLink="report"> Report</a>
+          </li>
+          
+      </ul>
+    </nz-sider>
+    <nz-layout>
+      <nz-header>
+        <div class="app-header">
+          <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+              <i class="trigger"
+                 nz-icon
+                 [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+              ></i>
+          </span>
+          <span style="float: right;padding-right: 60px;">
+            <i nz-icon nzType="logout" nzTheme="outline" (click)="logout()" ></i>
+          </span>
+        </div>
+      </nz-header>
+      <nz-content>
+        <div class="inner-content">
+          <router-outlet></router-outlet>
+        </div>
+      </nz-content>
+    </nz-layout>
+  </nz-layout>

@@ -142,7 +142,7 @@
 }
 
 .trigger:hover {
-  color: #1890ff;
+  color: #ffa318;
 }
 
 .sidebar-logo {
@@ -194,4 +194,18 @@ nz-content {
   padding: 24px;
   background: #fff;
   height: 100%;
+}
+.nz-menu-item{
+  background-color: transparent;
+  :active{
+    background-color: yellow;
+  }
+}
+a{
+  margin-left: 33px;
+}
+li{
+  i{
+    color:rgb(255, 153, 0);
+  }
 }
