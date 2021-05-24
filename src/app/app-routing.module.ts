@@ -72,6 +72,10 @@ const routes: Routes = [
     {path:'report',component:EmpReportComponent}
   ]
 },
+{
+  path:'login',component:LoginComponent
+}
+,
 
 {
   path:'',component:LoginComponent
