@@ -43,25 +43,31 @@
           <form (ngSubmit)="onSubmit('Updated Successfully','Dismiss')" >
             <div class="input-wrapper" style="width:45%">
             <mat-form-field style="width:280px" >
-            <input matInput [(ngModel)]="loggedInEmployee.username"  name="name" #name="ngModel" >
+              <mat-label>User Name</mat-label>
+
+            <input matInput [(ngModel)]="employee.username"  name="name" #name="ngModel" >
 
             </mat-form-field>
           </div>
           <div class="input-wrapper" style="width:49%;margin-left: 25px">
             <mat-form-field style="width:400px" >
-              <input matInput name="id" [(ngModel)]="loggedInEmployee.id" #idCtrl="ngModel" >
+              <mat-label>User ID</mat-label>
+
+              <input matInput name="id" [(ngModel)]="employee.id" #idCtrl="ngModel" >
 
             </mat-form-field>
           </div>
           <div class="input-wrapper" style="width:98%">
             <mat-form-field  style="width:350px">
+              <mat-label>E-Mail</mat-label>
               
-              <input matInput name="email" [(ngModel)]="loggedInEmployee.email" #emailCtrl="ngModel" >
+              <input matInput name="email" [(ngModel)]="employee.email" #emailCtrl="ngModel" >
             
             </mat-form-field>
           </div>
           <div class="input-wrapper" style="width:40%">
             <mat-form-field  >
+              <mat-label>DOB</mat-label>
               
               <input type="date" matInput placeholder="DOB"
                name="dob" [(ngModel)]="employee.dob" #dobCtrl="ngModel" >
@@ -70,8 +76,9 @@
           </div>
           <div class="input-wrapper" style="width:55%;margin-left: 25px;">
             <mat-form-field  >
+              <mat-label>Phone Number</mat-label>
              
-              <input matInput name="phonenumber" [(ngModel)]="loggedInEmployee.phonenumber" #phonenumberCtrl="ngModel" >
+              <input matInput name="phonenumber" [(ngModel)]="employee.phonenumber" #phonenumberCtrl="ngModel" >
 
             </mat-form-field>
           </div>
