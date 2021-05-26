@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialogRef} from '@angular/material/dialog';
-import {MatIconModule} from '@angular/material/icon';
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-logout',
@@ -9,8 +9,16 @@ import {MatIconModule} from '@angular/material/icon';
 })
 export class LogoutComponent implements OnInit {
 
-  constructor(public dialogRef:MatDialogRef<LogoutComponent>) { }
-
+  constructor(public dialogRef:MatDialogRef<LogoutComponent>,private route:Router) { }
+  onNoClick(){
+    this.dialogRef.close();
+  }
+  submitfun(){
+    this.dialogRef.close();
+        this.route.navigate(['login']); 
+        
+       
+  }
   ngOnInit(): void {
   }
 

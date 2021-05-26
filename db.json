@@ -14,6 +14,51 @@
       "postalcode": "",
       "qualification": "",
       "experience": ""
+    },
+    {
+      "id": "1",
+      "username": "Ramya",
+      "password": "123",
+      "role": "Admin",
+      "email": "aramya0209@gmail.com",
+      "phonenumber": "9994541162",
+      "dob": "",
+      "address": "",
+      "state": "",
+      "country": "",
+      "postalcode": "",
+      "qualification": "",
+      "experience": ""
+    },
+    {
+      "id": "2",
+      "username": "manager",
+      "password": "1",
+      "role": "Employee",
+      "email": "9994541162",
+      "phonenumber": "9994541162",
+      "dob": "",
+      "address": "",
+      "state": "",
+      "country": "",
+      "postalcode": "",
+      "qualification": "",
+      "experience": ""
+    },
+    {
+      "id": "9",
+      "username": "KCE711617104701",
+      "password": "1234",
+      "role": "Admin",
+      "email": "davidmanopadma123@gmail.com",
+      "phonenumber": "6374274938",
+      "dob": "",
+      "address": "",
+      "state": "",
+      "country": "",
+      "postalcode": "",
+      "qualification": "",
+      "experience": ""
     }
   ],
   "Users": [],
@@ -25,6 +70,14 @@
       "enddate": "2021-05-11T18:30:00.000Z",
       "priority": "1",
       "description": "web designing"
+    },
+    {
+      "id": 2,
+      "projectname": "angular",
+      "startdate": "2021-05-25T18:30:00.000Z",
+      "enddate": "2021-05-30T18:30:00.000Z",
+      "priority": "0",
+      "description": "hafshagfsd efadfd"
     }
   ],
   "tasks": [
