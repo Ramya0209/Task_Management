@@ -154,7 +154,29 @@
   background: #001529;
   transition: all .3s;
 }
+button.mat-menu-item{
+  background-color: white;
+  margin: 0cm;
+  height: 40px;
+}
 
+button.mat-menu-item:hover {
+  background-color:transparent;
+  color: rgb(238, 128, 3) !important;
+}
+
+.butt{
+
+:hover{
+  background-color: transparent;
+}
+}
+button{
+color: #26253c;
+// display: inline-block;
+text-transform: uppercase;
+font-size: 13px;
+}
 .sidebar-logo img {
   display: inline-block;
   height: 32px;
@@ -197,15 +219,16 @@ nz-content {
 }
 .nz-menu-item{
   background-color: transparent;
-  :active{
-    background-color: yellow;
-  }
+  
 }
 a{
   margin-left: 33px;
+  :hover{
+    font-size: 50px;
+  }
 }
 li{
   i{
-    color:rgb(255, 153, 0);
+    color:rgb(236, 129, 6);
   }
 }

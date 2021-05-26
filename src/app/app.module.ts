@@ -57,6 +57,7 @@ import hi from '@angular/common/locales/hi';
 import { IconsProviderModule } from './icons-provider.module';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
+import {MatMenuModule} from '@angular/material/menu';
 
 registerLocaleData(hi);
 // import { MatFormFieldControl } from '@angular/material/form-field/form-field-control';
@@ -89,7 +90,7 @@ registerLocaleData(hi);
     
   ],
   imports: [
-    BrowserModule,AuthModule,SharedModule,MatSelectModule,MatSnackBarModule,
+    BrowserModule,AuthModule,SharedModule,MatSelectModule,MatSnackBarModule,MatMenuModule,
     AppRoutingModule,FlexLayoutModule,MatGridListModule,ReactiveFormsModule,MatDialogModule,
     FormsModule,MatCardModule,MatInputModule,MatFormFieldModule,MatTableModule ,MatRadioModule,MatDatepickerModule,MatNativeDateModule,MatCheckboxModule,
     MatButtonModule,MatToolbarModule,MatIconModule,MatSidenavModule,MatListModule,BrowserAnimationsModule,HttpClientModule, IconsProviderModule, NzLayoutModule, NzMenuModule,

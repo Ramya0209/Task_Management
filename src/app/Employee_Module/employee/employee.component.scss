@@ -114,7 +114,29 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+button.mat-menu-item{
+  background-color: white;
+  margin: 0cm;
+  height: 40px;
+}
 
+button.mat-menu-item:hover {
+  background-color:transparent;
+  color: rgb(238, 128, 3) !important;
+}
+
+.butt{
+
+:hover{
+  background-color: transparent;
+}
+}
+button{
+color: #26253c;
+// display: inline-block;
+text-transform: uppercase;
+font-size: 13px;
+}
 .app-layout {
   height: 100vh;
 }
@@ -200,7 +222,7 @@ a{
 }
 li{
   i{
-    color:rgb(255, 153, 0);
+    color:rgb(236, 129, 6);
   }
   
 }

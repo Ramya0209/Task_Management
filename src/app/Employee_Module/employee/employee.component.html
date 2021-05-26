@@ -50,10 +50,7 @@
             <i nz-icon nzType="dashboard"></i>
             <a routerLink="employeedashboard">Dashboard</a>
           </li>
-          <li nz-menu-item  nzMatchRouter >
-            <i nz-icon nzType="user"></i>
-            <a routerLink="profile">Profile</a>
-          </li>
+          
          
           <li nz-menu-item  nzMatchRouter >
             <i nz-icon nzType="table"></i>
@@ -76,9 +73,17 @@
                  [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
               ></i>
           </span>
-          <span style="float: right;padding-right: 60px;">
-            <i nz-icon nzType="logout" nzTheme="outline" (click)="logout()" ></i>
-          </span>
+          <span style="float:right;border-color: transparent;padding-right: 30px;color:rgb(172, 163, 163);">
+          
+            <i nz-icon nzType="caret-down" [matMenuTriggerFor]="menu" nzTheme="outline" style="color: rgb(172, 163, 163);"></i>
+            <mat-menu #menu="matMenu" class="customize">
+              <button class="butt" mat-menu-item routerLink="profile"><i nz-icon nzType="user" style="padding-right: 15px;"></i>
+                My Profile</button>
+               
+              <button mat-menu-item><i nz-icon nzType="lock" style="padding-right: 15px;"></i>Change Password</button>
+              <button mat-menu-item ><i nz-icon nzType="logout" style="padding-right: 15px;"></i>Logout</button>
+            </mat-menu>
+        </span>
         </div>
       </nz-header>
       <nz-content>
