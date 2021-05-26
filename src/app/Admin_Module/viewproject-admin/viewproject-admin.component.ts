@@ -14,7 +14,7 @@ import { MatFormFieldControl } from '@angular/material/form-field';
    ]  
 })
 export class ViewprojectAdminComponent implements OnInit {
-  displayedColumns: string[] = ['projectname', 'startdate', 'enddate', 'priority','description'];
+  displayedColumns: string[] = ['projectname', 'startdate','enddate', 'priority','description','action'];
   dataSource!:IProject[];
   
   
