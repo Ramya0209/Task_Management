@@ -56,7 +56,7 @@
                 My Profile</button>
                
               <button mat-menu-item><i nz-icon nzType="lock" style="padding-right: 15px;"></i>Change Password</button>
-              <button mat-menu-item ><i nz-icon nzType="logout" style="padding-right: 15px;"></i>Logout</button>
+              <button mat-menu-item (click)="openDialog()"><i nz-icon nzType="logout" style="padding-right: 15px;"></i>Logout</button>
             </mat-menu>
         </span>
         </div>

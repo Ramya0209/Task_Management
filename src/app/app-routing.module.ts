@@ -33,6 +33,7 @@ import {EmpTaskComponent} from './Employee_Module/emp-task/emp-task.component';
 import { ViewprojectAdminComponent} from './Admin_Module/viewproject-admin/viewproject-admin.component';
 import { ViewtaskComponent } from './Manager_Module/viewtask/viewtask.component';
 import { EmpreportComponent } from './Manager_Module/empreport/empreport.component';
+import { LogoutComponent } from './auth/component/logout/logout.component';
 const routes: Routes = [
   
   {
@@ -86,7 +87,7 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  entryComponents:[ViewprojectAdminComponent,CreatetaskComponent]
+  entryComponents:[ViewprojectAdminComponent,CreatetaskComponent,LogoutComponent]
 })
 export class AppRoutingModule { }
 
