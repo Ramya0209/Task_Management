@@ -1,0 +1,65 @@
+<span class="spantag"><u style="color: rgb(69, 69, 155);"><a href="/employee/employeedashboard">Dashboard</a></u> / View Task</span>
+
+<div class="table">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" >
+    
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        <!-- Position Column -->
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> Id </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="Projectname">
+          <th mat-header-cell *matHeaderCellDef> Project Name</th>
+          <td mat-cell *matCellDef="let element"> {{element.Projectname}} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="Taskname">
+          <th mat-header-cell *matHeaderCellDef> Task Name</th>
+          <td mat-cell *matCellDef="let element"> {{element.Taskname}} </td>
+        </ng-container>
+      
+        <!-- Symbol Column -->
+        <!-- <ng-container matColumnDef="Assigned_To">
+          <th mat-header-cell *matHeaderCellDef> Assigned_To </th>
+          <td mat-cell *matCellDef="let element"> {{element.Assigned_To}} </td>
+        </ng-container> -->
+    
+        <ng-container matColumnDef="Start_Date">
+            <th mat-header-cell *matHeaderCellDef> Start_Date </th>
+            <td mat-cell *matCellDef="let element"> {{element.Start_Date}} </td>
+          </ng-container>
+    
+          <ng-container matColumnDef="End_date">
+            <th mat-header-cell *matHeaderCellDef> End_Date </th>
+            <td mat-cell *matCellDef="let element"> {{element.End_date}} </td>
+          </ng-container>
+    
+          <ng-container matColumnDef="Priority">
+            <th mat-header-cell *matHeaderCellDef> Priority </th>
+            <td mat-cell *matCellDef="let element"> {{element.Priority}} </td>
+          </ng-container>
+    
+          <ng-container matColumnDef="Description">
+            <th mat-header-cell *matHeaderCellDef> Description </th>
+            <td mat-cell *matCellDef="let element"> {{element.Description}} </td>
+          </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+      
+    
+    
+    
