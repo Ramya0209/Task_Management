@@ -12,4 +12,5 @@ export interface IEmployee{
     role:string;
     email:string;
     password:string;
+    cpassword:string;
 }

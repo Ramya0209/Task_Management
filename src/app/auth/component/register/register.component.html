@@ -1,95 +1,72 @@
 <div id="login" class="login-form-container">
-	<!-- <header><p><b>Register Here !!!</b></p></header> -->
-	<mat-card>
+  <mat-card> 
     <h3 class="reg">REGISTER</h3>
-   <form  #f='ngForm' >
-	<div class="input-wrapper">
-    <mat-form-field>
-           <input matInput type="text" required name='id' [(ngModel)]="employee.id" #id="ngModel" placeholder="User-ID" aria-label="UserId" aria-describedby="basic-addon1"><br>
-     <br>
-     <p class='spantag'>
-      <span *ngIf="hai" style="font-size:13px">User-ID already Exist</span>
-      </p>
-      <p class='spatag'>
-        <span *ngIf="id.touched && !id.valid" >User-ID is Required</span>
-        </p>
-      </mat-form-field>
-    </div>
-    
-    <!-- <p class='spantag'>
-    <span *ngIf="hai" style="font-size:13px">User-ID already Exist</span>
-    </p> -->
- <div class="input-wrapper" >
-  <mat-form-field>
-  <input matInput type="text" name='username' required [(ngModel)]="employee.username" #username="ngModel" placeholder="User-name" aria-label="Username" aria-describedby="basic-addon1"><br>
-  <p class='sptag'>
-    <span *ngIf="username.touched && !username.valid" >User-Name is Required</span>
-    </p>
-</mat-form-field>
-</div>
-<div class="input-wrapper" style="height:60px">
-  <mat-form-field>
-<div id="custom-select"  >
-  <select style="padding-bottom:15px ;width:300px" required name="role" [(ngModel)]="employee.role" #role="ngModel">
-    <option value="" disabled selected hidden>Role</option>
-    <option>Admin</option>
-    <option>Manager</option>
-    <option>Employee</option>
-  </select>
-  </div>
-  <p class='sptag'>
-    <span *ngIf="role.touched && !role.valid" >Role is Required</span>
-    </p>
-</mat-form-field>
-  </div>
- <div class="input-wrapper">
-<mat-form-field>
-  <input matInput type="email" name='email' required [(ngModel)]="employee.email" #email="ngModel"  placeholder="Mail-ID" aria-label="mailId" aria-describedby="basic-addon1"><br>
-  <p class='sptag'>
-    <span *ngIf="email.touched && !email.valid" >E-mail is Required</span>
-    </p>
-</mat-form-field>
-</div>
-<div class="input-wrapper">
-<mat-form-field>
-  <input matInput type="text" name='contact' required 
-  [(ngModel)]="employee.phonenumber" #contact="ngModel"  placeholder="Phone Number" aria-label="contact" aria-describedby="basic-addon1"><br>
-  <p class='sptag'>
-    <span *ngIf="contact.touched && !contact.valid" >Phone number is Required </span>
-    </p>
-</mat-form-field></div><div class="input-wrapper"><mat-form-field>
-   <input type="password" name='password' required [(ngModel)]="employee.password" #password="ngModel"  placeholder="Password" aria-label="Recipient's username" aria-describedby="basic-addon2">
-   <p class='sptag'>
-    <span *ngIf="password.touched && !password.valid" >Password is Required </span>
-    </p>
-  </mat-form-field>
-  </div>
-  <div class="input-wrapper" >
-  <mat-form-field>
-    <input matInput type="password" name='cpassword' required   placeholder="Confirm Password" aria-label="Recipient's username" aria-describedby="basic-addon2">
-    
-  </mat-form-field>
-   </div>
+  
+   <form (ngSubmit)="onSubmit('Registered','Dismiss',myForm)" #myForm="ngForm">
+     <div class="input-wrapper">
+   <mat-form-field style="width:400px" >
+     <mat-label>User-ID</mat-label>
+     <input matInput name="id" [(ngModel)]="employee.id" #idCtrl="ngModel" required>
+   <mat-error *ngIf="idCtrl.hasError('required')  && !userid ">User-ID is required</mat-error>
+   <!-- <mat-error *ngIf="userid">User-ID already exist</mat-error> -->
+     </mat-form-field></div>
+     <div class="input-wrapper"><mat-form-field style="width:400px" >
+       <mat-label>Username</mat-label>
+       <input matInput name="username" [(ngModel)]="employee.username" #usernameCtrl="ngModel" required>
+     <mat-error *ngIf="usernameCtrl.hasError('required')">Username is required</mat-error>
  
- 
+       </mat-form-field></div><div class="input-wrapper">
+              <mat-form-field style="width: 250px;" >
+         <mat-label>Role</mat-label>
+         <select name="role" [(ngModel)]="employee.role" #roleCtrl="ngModel" required matNativeControl required>
+           
+           <option >Admin</option>
+           <option >Manager</option>
+           <option >Employee</option>
+         </select>
+         <mat-error *ngIf="roleCtrl.hasError('required')">Role is required</mat-error>
+       </mat-form-field>
+       </div><div class="input-wrapper">
+         <mat-form-field style="width:400px" >
+           <mat-label>Email-ID</mat-label>
+           <input matInput name="email" [(ngModel)]="employee.email" #emailCtrl="ngModel" required>
+         <mat-error *ngIf="emailCtrl.hasError('required')">Email-ID is required</mat-error>
+     
+           </mat-form-field></div><div class="input-wrapper">
+           <mat-form-field style="width:400px" >
+             <mat-label>phonenumber</mat-label>
+             <input matInput name="contact" [(ngModel)]="employee.phonenumber" #contactCtrl="ngModel" required>
+           <mat-error *ngIf="contactCtrl.hasError('required')">Phone Number is required</mat-error>
+       
+             </mat-form-field></div>
+             
+          
+             <div class="input-wrapper"><mat-form-field style="width:400px" >
+               <mat-label>Password</mat-label>
+               <input type="password" matInput  name="password" autocomplete="off" 
+               [(ngModel)]="employee.password" #passwordCtrl="ngModel" required>
+             <mat-error *ngIf="passwordCtrl.hasError('required')">Password is required</mat-error>
+         
+               </mat-form-field></div>
+               <div class="input-wrapper">
+                
+                 <mat-form-field style="width:400px" >
+                 <mat-label>Confirm Password</mat-label>
+                 <input type="password"  matInput autocomplete="off" name="confirmPassword"
+                  [(ngModel)]="employee.cpassword"
+                  #cpasswordCtrl="ngModel"  required>
+                  <mat-error *ngIf="cpasswordCtrl.hasError('required')"> Confirm password is required
 
-<button [disabled]="!f.valid" (click)="onSubmit('Registered successfull','Dismiss')">Register</button>
+                  </mat-error>
+                  <!-- <mat-error *ngIf="passcheck "> Password and Confirm password must be same
 
-</form>
-</mat-card>
+                  </mat-error> -->
+               
+
+                 </mat-form-field></div>
+                 
+     
+     <button class="but"  mat-button  >Register</button>
+   </form>
+ </mat-card>
  </div>
-<!-- <div id="login" class="login-form-container">
-	<form #f='ngForm' (ngSubmit)='onSubmit()'>
-
-	<header>LOGIN - SIGN UP</header>
-	<fieldset>
-	  <div class="input-wrapper">
-		<input type="text" name='name'  [(ngModel)]="employee.username" #name="ngModel" class="form-control" placeholder="Userid" aria-label="UserId" aria-describedby="basic-addon1"><br>
-	</div>
-	  <div class="input-wrapper">
-		<input type="password" name='password'  [(ngModel)]="employee.password" #password="ngModel" class="form-control" placeholder="Password" aria-label="Recipient's username" aria-describedby="basic-addon2">
-	</div>
-	  <button type="submit" type="button">CONTINUE</button>
-	</fieldset>
-	</form>
-  </div> -->

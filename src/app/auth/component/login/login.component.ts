@@ -19,6 +19,7 @@ import { UserService } from 'src/app/services/user.service';
     dob:'',
     username:'',
     password:'',
+    cpassword:"",
     role:'',
     email:'',
     phonenumber:'',

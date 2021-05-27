@@ -12,8 +12,12 @@ import { ProfileService } from './profile.service';
 })
 export class ProfileComponent implements OnInit {
   
+
  
   loggedInEmployee:IEmployee;
+
+ 
+
 
   constructor(private _profileService:ProfileService,private _snackbar:MatSnackBar ,private _userService:UserService) { }
 

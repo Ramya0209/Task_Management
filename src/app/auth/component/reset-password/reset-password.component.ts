@@ -21,8 +21,8 @@ export class ResetPasswordComponent implements OnInit {
     country:'',
     postalcode:'',
     qualification:'',
-    experience:''
-
+    experience:'',
+cpassword:''
 
   }
   constructor(private _resetPassword:ResetPasswordService) { }

@@ -59,6 +59,22 @@
       "postalcode": "",
       "qualification": "",
       "experience": ""
+    },
+    {
+      "id": "11",
+      "username": "Ramya",
+      "password": "123",
+      "cpassword": "123",
+      "role": "Admin",
+      "email": "aramya0209@gmail.com",
+      "phonenumber": "9994541162",
+      "dob": "",
+      "address": "",
+      "state": "",
+      "country": "",
+      "postalcode": "",
+      "qualification": "",
+      "experience": ""
     }
   ],
   "Users": [],
