@@ -7,9 +7,9 @@ import { IEmployee } from '../models/login.models';
 export class UserService {
   loggedInEmployee:IEmployee;
   constructor() { }
-  setLoggedInEmployee(loggedInEmployee){
-    this.loggedInEmployee=loggedInEmployee
-      
+  setLoggedInEmployee(loggedInEmployee)
+  {
+    this.loggedInEmployee=loggedInEmployee;
   }
   getLoggedInEmployee(){
     return this.loggedInEmployee;
