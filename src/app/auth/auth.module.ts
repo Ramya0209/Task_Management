@@ -11,16 +11,20 @@ import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
 import { ResetPasswordComponent} from './component/reset-password/reset-password.component';
 import { LogoutComponent } from './component/logout/logout.component';
+
+import {MatInputModule} from '@angular/material/input';
+import {MatMenuModule} from '@angular/material/menu';
+import { IconsProviderModule } from '../icons-provider.module';
 @NgModule({
   declarations: [LoginComponent, RegisterComponent,ResetPasswordComponent, LogoutComponent],
   imports: [
     
     CommonModule,MatFormFieldModule,MatCardModule,MatButtonModule,MatIconModule,
-    AuthRoutingModule,FormsModule,ReactiveFormsModule
+    AuthRoutingModule,FormsModule,ReactiveFormsModule,MatInputModule,MatMenuModule,IconsProviderModule
   ],
   exports:[
-    LoginComponent, RegisterComponent,ResetPasswordComponent,
-    FormsModule
+    LoginComponent, RegisterComponent,ResetPasswordComponent
+    
   ]
 })
 export class AuthModule { }

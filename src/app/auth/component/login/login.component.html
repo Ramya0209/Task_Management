@@ -1,80 +1,43 @@
 <body><div  id="login" class="login-form-container">
-	<mat-card>
-	<!-- <header><p><b>LOGIN To Continue ..</b> </p></header> -->
-	<!-- [FormGroup]="form" -->
-	<h3 class="reg">LOGIN</h3>
-   <form #f='ngForm'  >
-	   <div >
-	<div class="input-wrapper"> 
-	<mat-form-field>
-	<input matInput   name="id" required [(ngModel)]="employee.id" #idCtrl="ngModel"
-	   placeholder="User-Id" aria-label="UserId" 
-	 aria-describedby="basic-addon1"><br>
-	 <mat-error *ngIf="idCtrl.hasError('required')">Progress is required</mat-error>
+	<mat-card> 
+	
+	 <h3 class="reg">LOGIN</h3> 
+ 
+	<form (ngSubmit)="onSubmit('loged in','Dismiss',myForm)" #myForm="ngForm">
+	   
+		<div class="input-wrapper"> 
+		<mat-form-field style="width:400px" >
+			<mat-label>User ID</mat-label>
+			<input matInput name="id" [(ngModel)]="employee.id" #idCtrl="ngModel" required>
+	  <mat-error *ngIf="idCtrl.touched && idCtrl.errors?.required">User ID is required</mat-error>
 
-</mat-form-field>
-</div> 
+		  </mat-form-field>
+		  </div>
+		  <div class="input-wrapper"> 
+		  <mat-form-field style="width:400px" >
+			<mat-label>Password</mat-label>
+			<input matInput name="password" [(ngModel)]="employee.password" #passwordCtrl="ngModel" required>
+	  <mat-error *ngIf="passwordCtrl.hasError('required')">password is required</mat-error>
 
-<div class="input-wrapper">
-	<mat-form-field>
-    <input  matInput type="password" required  name="password"  [(ngModel)]="employee.password" 
-   #password="ngModel"  placeholder="Password" aria-label="Recipient's username" 
-   aria-describedby="basic-addon2">
-   <p class="spantag">
-	<span *ngIf="password.touched && !password.valid">Password is Required</span>
-   </p>
-</mat-form-field>
-  </div>
+		  </mat-form-field>
+		  </div>
+	
 
  <div class="forgot">
   <a routerLink='/resetpassword' routerLinkActive='Active'>Forgot password ?</a>
   </div>
-<button mat-button (click)="onSubmit('Logged in','Dismiss',f)"  type="submit" [disabled]="!f.valid" >Login</button>
-</div>
+ 
+<button mat-button  >Login</button>
+<!-- </div> -->
+</form>
 <span class="orPart">-----------------or-----------------</span>
 
 
 <button mat-button routerLink="/register" >Register</button>
-</form>
+
 </mat-card>
  </div>
 </body>
-<!-- <div id="login" class="login-form-container">
-	<form #f='ngForm' (ngSubmit)='onSubmit()'>
 
-	<header>LOGIN - SIGN UP</header>
-	<fieldset>
-	  <div class="input-wrapper">
-		<input type="text" name='name'  [(ngModel)]="employee.username" #name="ngModel" class="form-control" placeholder="Userid" aria-label="UserId" aria-describedby="basic-addon1"><br>
-	</div>
-	  <div class="input-wrapper">
-		<input type="password" name='password'  [(ngModel)]="employee.password" #password="ngModel" class="form-control" placeholder="Password" aria-label="Recipient's username" aria-describedby="basic-addon2">
-	</div>
-	  <button type="submit" type="button">CONTINUE</button>
-	</fieldset>
-	</form>
-  </div> -->
-  <!-- <div id="login" class="login-form-container">
-	<mat-card>
-		<h3 class="reg">REPORT</h3>
-	  <form  (ngSubmit)="onSubmit('Submitted','Dismiss',myForm)" #myForm="ngForm"><br>
-		<div class="input-wrapper">
-	<mat-form-field  >
-		  <input matInput placeholder="Project Name" name='title' required
-			[(ngModel)]="employee.username" #titleCtrl="ngModel" >
-		  <mat-error *ngIf="titleCtrl.touched && titleCtrl.errors?.required" >Project Name is required</mat-error>
-		</mat-form-field>
-	  </div><br>
-	  <div class="input-wrapper">
-  <mat-form-field  >
-		  <input matInput placeholder="Progress" name='progress' required
-			[(ngModel)]="employee.password" #progressCtrl="ngModel" >
-		  <mat-error *ngIf="progressCtrl.hasError('required')">Progress is required</mat-error>
-		</mat-form-field>
-	  </div><br>
-	<button mat-raised-button color="primary" style="margin-top: 40px;">Submit</button><br>
-	</form>
-	</mat-card>  
-	</div> -->
 	
 	
