@@ -1,0 +1,27 @@
+<span class="spantag"><u style="color: rgb(69, 69, 155);"><a href="/admin/admindashboard">Dashboard</a></u> / Change Password</span>
+
+   <form >
+    <mat-form-field appearance="outline" style="padding-left: 10%;">
+        <mat-label>User ID</mat-label>
+        <input matInput  placeholder="id" [(ngModel)]="pass.id" name="id" #id="ngModel" readonly>
+      </mat-form-field>
+      <mat-form-field appearance="outline" style="padding-left: 10%;padding-bottom: 7%;">
+        <mat-label>User Name</mat-label>
+        <input matInput placeholder="name" [(ngModel)]="pass.username"  name="name" #name="ngModel" readonly>
+      </mat-form-field>
+      <mat-form-field appearance="outline" style="padding-left: 10%;">
+        <mat-label>E-Mail</mat-label>
+        <input matInput placeholder="email" [(ngModel)]="pass.email" name="mail" #mail="ngModel" readonly> 
+      </mat-form-field>
+      <mat-form-field appearance="outline" style="padding-left: 10%;">
+        <mat-label>Old Password</mat-label>
+        <input matInput placeholder="Old Password" type="password" name="pass" >
+      </mat-form-field>
+      <mat-form-field appearance="outline" style="padding-left: 10%;">
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="Password" type="password" name="password" [(ngModel)]="employee.password" #password="ngModel">
+      </mat-form-field>
+  <button mat-raised-button class="btn" color="primary" style="margin-top: 40px;">Update</button><br>
+      
+    </form>
+

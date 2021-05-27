@@ -1,0 +1,29 @@
+form{
+    padding-top: 10%;
+}
+.btn {
+    outline: 0;
+    font-size: 15px;
+    letter-spacing: 0.4em;
+    background: linear-gradient(to  right, rgb(231, 137, 15),rgb(231, 137, 15), #203374);
+    color: #fff;
+    border: none;
+    border-radius: 35px;
+    width: 200px;
+    padding:0.3cm;
+    margin: 0.5em auto;
+    display: block;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    &:hover {
+      border-bottom-color: darken(white, 25);
+    }
+  }
+  .spantag{
+    color: #26253c;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+  

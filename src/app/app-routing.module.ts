@@ -33,6 +33,7 @@ import {EmpTaskComponent} from './Employee_Module/emp-task/emp-task.component';
 import { ViewprojectAdminComponent} from './Admin_Module/viewproject-admin/viewproject-admin.component';
 import { ViewtaskComponent } from './Manager_Module/viewtask/viewtask.component';
 import { EmpreportComponent } from './Manager_Module/empreport/empreport.component';
+import { ChangepassComponent } from './changepass/changepass.component';
 const routes: Routes = [
   
   {
@@ -44,6 +45,9 @@ const routes: Routes = [
       {path: 'viewprojectadmin', component:ViewprojectAdminComponent },
       {path: 'adminreport', component:AdminreportComponent },
       {path: 'completion', component:CompletionComponent },  
+      {
+        path:'changepassword',component:ChangepassComponent
+      }
     ]
   },  
 {
@@ -57,6 +61,9 @@ const routes: Routes = [
     {path:'managerreport',component:ManagerreportComponent},
     {path:"employeereport",component:EmpreportComponent    },
     { path:'',component:ManagerDashboardComponent},
+    {
+      path:'changepassword',component:ChangepassComponent
+    }
   ]
 },
 
@@ -69,7 +76,10 @@ const routes: Routes = [
     {path: 'employeedashboard', component:EmployeeDashboardComponent },
     {path: 'profile', component:ProfileComponent },
     {path:'task' ,component:EmpTaskComponent},
-    {path:'report',component:EmpReportComponent}
+    {path:'report',component:EmpReportComponent},
+    {
+      path:'changepassword',component:ChangepassComponent
+    }
   ]
 },
 {
@@ -79,7 +89,9 @@ const routes: Routes = [
 
 {
   path:'',component:LoginComponent
-}
+},
+
+
 
 ];
 

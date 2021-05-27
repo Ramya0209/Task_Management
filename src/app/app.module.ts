@@ -58,6 +58,7 @@ import { IconsProviderModule } from './icons-provider.module';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import {MatMenuModule} from '@angular/material/menu';
+import { ChangepassComponent } from './changepass/changepass.component';
 
 registerLocaleData(hi);
 // import { MatFormFieldControl } from '@angular/material/form-field/form-field-control';
@@ -84,10 +85,10 @@ registerLocaleData(hi);
     AdminreportComponent,
     ViewprojectAdminComponent,
     EmpTaskComponent,
-    ViewtaskComponent
+    ViewtaskComponent,
     // EmpProjectComponent,
     // EmpReportComponent
-    
+ ChangepassComponent     
   ],
   imports: [
     BrowserModule,AuthModule,SharedModule,MatSelectModule,MatSnackBarModule,MatMenuModule,
