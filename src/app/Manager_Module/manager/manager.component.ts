@@ -17,6 +17,7 @@ export class ManagerComponent implements OnInit {
     id:'',
     username:'',
     password:'',
+    cpassword:'',
     role:'',
     email:'',
     phonenumber:'',

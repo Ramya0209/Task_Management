@@ -21,6 +21,7 @@ export class AdminComponent implements OnInit {
     id:'',
     username:'',
     password:'',
+    cpassword:'',
     role:'',
     email:'',
     phonenumber:'',
