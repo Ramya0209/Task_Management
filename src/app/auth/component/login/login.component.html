@@ -16,7 +16,7 @@
 		  <div class="input-wrapper"> 
 		  <mat-form-field style="width:400px" >
 			<mat-label>Password</mat-label>
-			<input matInput name="password" [(ngModel)]="employee.password" #passwordCtrl="ngModel" required>
+			<input matInput name="password" type="password" [(ngModel)]="employee.password" #passwordCtrl="ngModel" required>
 	  <mat-error *ngIf="passwordCtrl.hasError('required')">password is required</mat-error>
 
 		  </mat-form-field>

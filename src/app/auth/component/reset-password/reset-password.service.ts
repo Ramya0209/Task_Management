@@ -1,15 +1,16 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
+import { throwError, Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { IEmployee } from '../models/login.models';
+import { IEmployee } from 'src/app/models/login.models';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ChangepassService {
-  url='http://localhost:3000/employees';
-  constructor(private httpClient: HttpClient) { }
+export class ResetPasswordService {
+  baseUrl = 'http://localhost:3000/employees';
+
+  constructor(private httpClient:HttpClient) { }
   private handleError(errorResponse: HttpErrorResponse) {
     if (errorResponse.error instanceof ErrorEvent) {
         console.error('Client Side Error :', errorResponse.error.message);
@@ -18,18 +19,17 @@ export class ChangepassService {
     }
     return throwError('There is a problem with the service. We are notified & working on it. Please try again later.');
 }
-getEmployee(id: String,password:string): Observable<IEmployee[]> {
-        
-  return this.httpClient.get<IEmployee[]>(`${this.url}?id=${id}&password=${password}`)
-      .pipe(catchError(this.handleError));
+getEmployee(id: String): Observable<IEmployee[]> {
+    
+    return this.httpClient.get<IEmployee[]>(`${this.baseUrl}?id=${id}`)
+        .pipe(catchError(this.handleError));
 }
-updatePassword(id:string,password:string): Observable<IEmployee[]> {
-  return this.httpClient.patch<IEmployee[]>(`${this.url}?id=${id}&password=${password}`, {
+updatePassword(password:string): Observable<void> {
+  return this.httpClient.patch<void>(`${this.baseUrl}/${password}`,{
     headers: new HttpHeaders({
         'Content-Type': 'application/json'
     })
 })
 .pipe(catchError(this.handleError));
 }
-
 }

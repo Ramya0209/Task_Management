@@ -12,22 +12,8 @@ import { ProfileService } from './profile.service';
 })
 export class ProfileComponent implements OnInit {
   
-  employee:IEmployee={
-    id:'',
-    username:'',
-    password:'',
-    role:'',
-    email:'',
-    phonenumber:'',
-    dob:'',
-    address:'',
-    state:'',
-    country:'',
-    postalcode:'',
-    qualification:'',
-    experience:''
-  }
-  loggedInEmployee=this.employee;
+ 
+  loggedInEmployee:IEmployee;
 
   constructor(private _profileService:ProfileService,private _snackbar:MatSnackBar ,private _userService:UserService) { }
 
@@ -36,11 +22,11 @@ export class ProfileComponent implements OnInit {
     this.loggedInEmployee=this._userService.getLoggedInEmployee();
   }
   onSubmit(message:string,action:string){
-    this._profileService.updateEmployee(this.employee).subscribe(
+    this._profileService.updateEmployee(this.loggedInEmployee).subscribe(
       (result) =>
       {
         this._snackbar.open(message,action,{duration:2000})
-        console.log(this.employee=result);
+        console.log(result);
         // this._snackBar.open(message, action,{
         //   duration:2000
         // });

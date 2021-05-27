@@ -18,8 +18,9 @@ export class ProfileService {
     }
     return throwError('There is a problem with the service. We are notified & working on it. Please try again later.');
 }
-updateEmployee(employee: IEmployee): Observable<IEmployee> {
-  return this.httpClient.patch<IEmployee>(`${this.baseUrl}/${employee.id}`, employee, {
+updateEmployee(employee: IEmployee): Observable<void> {
+  console.log(employee);
+  return this.httpClient.put<void>(`${this.baseUrl}/${employee.id}`, employee, {
       headers: new HttpHeaders({
           'Content-Type': 'application/json'
       })

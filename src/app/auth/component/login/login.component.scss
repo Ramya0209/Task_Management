@@ -167,7 +167,7 @@ input:-internal-autofill-selected {
 }
 ::ng-deep .mat-form-field {
   .mat-input-element {
-      color: slategray;
+      color: black;
   }
   .mat-form-field-label {
       color: rgb(36, 46, 104);
@@ -195,7 +195,7 @@ input:-internal-autofill-selected {
   //     color: #ff884d;
   // }
   .mat-input-element {
-      color: rgb(241, 250, 248);
+      color: black;
   }
 }
 mat-label{

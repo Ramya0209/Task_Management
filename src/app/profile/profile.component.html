@@ -45,7 +45,7 @@
             <mat-form-field style="width:280px" >
               <mat-label>User Name</mat-label>
 
-            <input matInput [(ngModel)]="employee.username"  name="name" #name="ngModel" >
+            <input matInput [(ngModel)]="loggedInEmployee.username"  name="name" #name="ngModel" >
 
             </mat-form-field>
           </div>
@@ -53,7 +53,7 @@
             <mat-form-field style="width:400px" >
               <mat-label>User ID</mat-label>
 
-              <input matInput name="id" [(ngModel)]="employee.id" #idCtrl="ngModel" >
+              <input matInput name="id" [(ngModel)]="loggedInEmployee.id" #idCtrl="ngModel" readonly>
 
             </mat-form-field>
           </div>
@@ -61,7 +61,7 @@
             <mat-form-field  style="width:350px">
               <mat-label>E-Mail</mat-label>
               
-              <input matInput name="email" [(ngModel)]="employee.email" #emailCtrl="ngModel" >
+              <input matInput name="email" [(ngModel)]="loggedInEmployee.email" #emailCtrl="ngModel" >
             
             </mat-form-field>
           </div>
@@ -70,7 +70,7 @@
               <mat-label>DOB</mat-label>
               
               <input type="date" matInput placeholder="DOB"
-               name="dob" [(ngModel)]="employee.dob" #dobCtrl="ngModel" >
+               name="dob" [(ngModel)]="loggedInEmployee.dob" #dobCtrl="ngModel" >
 
             </mat-form-field>
           </div>
@@ -78,42 +78,42 @@
             <mat-form-field  >
               <mat-label>Phone Number</mat-label>
              
-              <input matInput name="phonenumber" [(ngModel)]="employee.phonenumber" #phonenumberCtrl="ngModel" >
+              <input matInput name="phonenumber" [(ngModel)]="loggedInEmployee.phonenumber" #phonenumberCtrl="ngModel" >
 
             </mat-form-field>
           </div>
           <div class="input-wrapper" style="width:98%">
             <mat-form-field  style="width:350px">
               <mat-label>Address</mat-label>
-              <input matInput name="address" [(ngModel)]="employee.address" #addressCtrl="ngModel" >
+              <input matInput name="address" [(ngModel)]="loggedInEmployee.address" #addressCtrl="ngModel" >
             </mat-form-field>
           </div>
           <div class="input-wrapper" style="width:32%">
   
             <mat-form-field  >
               <mat-label>state</mat-label>
-              <input  matInput name="state" [(ngModel)]="employee.state" #stateCtrl="ngModel" >
+              <input  matInput name="state" [(ngModel)]="loggedInEmployee.state" #stateCtrl="ngModel" >
 
             </mat-form-field>
           </div>
           <div class="input-wrapper" style="width:30%;margin-left: 20px;">
             <mat-form-field  >
               <mat-label>Country</mat-label>
-              <input  matInput name="country" [(ngModel)]="employee.country" #countryCtrl="ngModel" >
+              <input  matInput name="country" [(ngModel)]="loggedInEmployee.country" #countryCtrl="ngModel" >
 
             </mat-form-field>
           </div>
           <div class="input-wrapper" style="width:30%;margin-left: 20px;">
             <mat-form-field  >
               <mat-label>Postal code</mat-label>
-              <input  matInput name="post" [(ngModel)]="employee.postalcode" #postCtrl="ngModel" >
+              <input  matInput name="post" [(ngModel)]="loggedInEmployee.postalcode" #postCtrl="ngModel" >
 
             </mat-form-field>
           </div>
           <div class="input-wrapper" style="width:49%">
             <mat-form-field >
               <mat-label>Qualification</mat-label>
-              <input matInput name="qualification" [(ngModel)]="employee.qualification" #qualificationCtrl="ngModel" >
+              <input matInput name="qualification" [(ngModel)]="loggedInEmployee.qualification" #qualificationCtrl="ngModel" >
 
             </mat-form-field>
           </div>
@@ -121,7 +121,7 @@
             <mat-form-field  >
               
              <mat-label>Experience</mat-label>
-              <input matInput name="experience" [(ngModel)]="employee.experience" #experienceCtrl="ngModel" >
+              <input matInput name="experience" [(ngModel)]="loggedInEmployee.experience" #experienceCtrl="ngModel" >
 
             </mat-form-field>
           </div>
