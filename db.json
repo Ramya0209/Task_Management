@@ -47,6 +47,22 @@
       "postalcode": "",
       "qualification": "",
       "experience": ""
+    },
+    {
+      "id": "23",
+      "username": "kiruthika",
+      "password": "12345",
+      "cpassword": "12345",
+      "role": "Employee",
+      "email": "abcd@gmail.com",
+      "phonenumber": "9876543210",
+      "dob": "",
+      "address": "",
+      "state": "",
+      "country": "",
+      "postalcode": "",
+      "qualification": "",
+      "experience": ""
     }
   ],
   "Users": [],
