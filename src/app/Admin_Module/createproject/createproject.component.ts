@@ -8,6 +8,7 @@ import { NgForm } from '@angular/forms';
 import { IEmployee } from 'src/app/models/login.models';
 import { getMatInputUnsupportedTypeError } from '@angular/material/input';
 import { Route, Router } from '@angular/router';
+import { ProjectService } from 'src/app/services/project.service';
 // import { MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 
@@ -20,7 +21,7 @@ import { Route, Router } from '@angular/router';
 })
 export class CreateProjectComponent implements OnInit  {
   constructor(private _createprojectService:CreateProjectService,private _snackbar:MatSnackBar,
-    public dialogRef:MatDialogRef<CreateProjectComponent>,private route:Router) { }
+    public dialogRef:MatDialogRef<CreateProjectComponent>,private route:Router,private _editProjectService:ProjectService) { }
 
   project:IProject={
     id: 0,
@@ -39,7 +40,7 @@ export class CreateProjectComponent implements OnInit  {
     this._createprojectService.createProject(this.project).subscribe(
       (result) =>
       {
-        
+        this._editProjectService.seteditProject(result);
         this._snackbar.open(message,action,{duration:2000});
         console.log(result);
         this.dialogRef.close();

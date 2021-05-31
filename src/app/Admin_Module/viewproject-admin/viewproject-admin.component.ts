@@ -5,6 +5,7 @@ import { ViewprojectAdminService } from '../viewproject-admin/viewproject-admin.
 import {MatDialog} from '@angular/material/dialog';
 import {CreateProjectComponent} from '../createproject/createproject.component';
 import { MatFormFieldControl } from '@angular/material/form-field';
+import { ProjectService } from 'src/app/services/project.service';
 @Component({
   selector: 'app-viewproject-admin',
   templateUrl: './viewproject-admin.component.html',
@@ -16,9 +17,9 @@ import { MatFormFieldControl } from '@angular/material/form-field';
 export class ViewprojectAdminComponent implements OnInit {
   displayedColumns: string[] = ['projectname', 'startdate','enddate', 'priority','description','action'];
   dataSource!:IProject[];
+  editProject:IProject;
   
-  
-  constructor(private _vps:ViewprojectAdminService,public dialog: MatDialog) { }
+  constructor(private _vps:ViewprojectAdminService,public dialog: MatDialog,private _editProjectService:ProjectService) { }
   
 
   ngOnInit(): void {
@@ -35,10 +36,12 @@ export class ViewprojectAdminComponent implements OnInit {
     }
 
     openDialog(): void {
+      
       const dialogRef = this.dialog.open(CreateProjectComponent);
       dialogRef.afterClosed().subscribe(result => {
         console.log('The dialog was closed');
   
       });
+     
 }
 }

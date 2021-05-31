@@ -1,12 +1,33 @@
 {
   "employees": [
     {
+
       "id": 1,
       "username": "Ramya",
       "password": "ramyaarumugam",
       "cpassword": "ramyaarumugam",
+
+    
       "role": "Admin",
       "email": "aramya0209@gmail.com",
+      "phonenumber": "9994541162",
+      "dob": "2021-05-19",
+      "address": "abc",
+      "state": "tn",
+      "country": "india",
+      "postalcode": "641004",
+      "qualification": "",
+      "experience": ""
+    },
+  {
+      "id": 2,
+      "username": "Padmapriya",
+      "password": "padmapriya",
+      "cpassword": "padmapriya",
+      "role": "Manager",
+
+    
+      "email": "xyz@gmail.com",
       "phonenumber": "9994541162",
       "dob": "",
       "address": "",
@@ -17,11 +38,11 @@
       "experience": ""
     },
     {
-      "id": 2,
-      "username": "Padmapriya",
-      "password": "padmapriya",
-      "cpassword": "padmapriya",
-      "role": "Manager",
+      "id": "3",
+      "username": "Vinu Priya R",
+      "password": "1",
+      "cpassword": "1",
+      "role": "Employee",
       "email": "bharatharumugam176@gmail.com",
       "phonenumber": "9994541162",
       "dob": "",
