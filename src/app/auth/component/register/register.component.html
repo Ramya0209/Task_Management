@@ -29,7 +29,7 @@
        </div><div class="input-wrapper">
          <mat-form-field style="width:400px" >
            <mat-label>Email-ID</mat-label>
-           <input matInput name="email" [(ngModel)]="employee.email" #emailCtrl="ngModel" required>
+           <input matInput name="email" [(ngModel)]="employee.email" #emailCtrl="ngModel"  required>
          <mat-error *ngIf="emailCtrl.hasError('required')">Email-ID is required</mat-error>
      
            </mat-form-field></div><div class="input-wrapper">

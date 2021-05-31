@@ -3,7 +3,7 @@
    <form (ngSubmit)="onSubmit('updated Successfully','Dismiss')" >
     <mat-form-field appearance="outline" style="padding-left: 10%;">
         <mat-label>User ID</mat-label>
-        <input matInput  placeholder="id" [(ngModel)]="pass.id" name="id" #id="ngModel" readonly>
+        <input matInput  placeholder="id" [(ngModel)]="password.id" name="id" #id="ngModel" readonly>
       </mat-form-field>
       <mat-form-field appearance="outline" style="padding-left: 10%;padding-bottom: 7%;">
         <mat-label>User Name</mat-label>
@@ -15,11 +15,11 @@
       </mat-form-field>
       <mat-form-field appearance="outline" style="padding-left: 10%;">
         <mat-label>Old Password</mat-label>
-        <input matInput placeholder="Old Password" type="password" name="password"  >
+        <input matInput placeholder="Old Password" type="password" name="password"  [(ngModel)]='pass.password' #password='ngModel'>
       </mat-form-field>
       <mat-form-field appearance="outline" style="padding-left: 10%;">
         <mat-label> New Password</mat-label>
-        <input matInput placeholder="Password" type="password" name="password"  >
+        <input matInput placeholder="Password" type="password" name="newpassword" [(ngModel)]='pass.newpassword' #newpassword='ngModel' >
       </mat-form-field>
   <button mat-raised-button class="btn" color="primary" style="margin-top: 40px;">Update</button><br>
       

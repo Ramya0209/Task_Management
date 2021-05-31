@@ -2,19 +2,19 @@
   "employees": [
     {
       "id": "1",
-      "username": "Ramya",
-      "password": "123",
-      "cpassword": "123",
-      "role": "Admin",
-      "email": "aramya0209@gmail.com",
-      "phonenumber": "9994541162",
+      "username": "",
+      "password": "12345",
+      "role": "",
+      "email": "",
+      "phonenumber": "",
       "dob": "",
       "address": "",
       "state": "",
       "country": "",
       "postalcode": "",
       "qualification": "",
-      "experience": ""
+      "experience": "",
+      "cpassword": ""
     },
     {
       "id": "2",

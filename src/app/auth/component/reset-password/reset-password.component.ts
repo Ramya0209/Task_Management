@@ -34,9 +34,9 @@ onSubmit(){
     (response)=>{
       console.log(response);
 if(!response || response.length==0){
-  window.alert("id");
+  window.alert("password Incorrect");
 }else{
-  this._resetPassword.updatePassword(this.employee.password).subscribe(
+  this._resetPassword.updatePassword(this.employee).subscribe(
     (result)=>{
       console.log(result);
     }
