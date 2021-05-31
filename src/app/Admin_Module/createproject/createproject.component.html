@@ -13,7 +13,7 @@
 <mat-form-field  >
   <mat-label>Project Name</mat-label>
       <input matInput  name='title' required
-        [(ngModel)]="project.projectname" #titleCtrl="ngModel">
+        [(ngModel)]="project.projectname" maxlength="30" #titleCtrl="ngModel">
       <mat-error *ngIf="titleCtrl.hasError('required')" >Project Name is required</mat-error>
     </mat-form-field>
   </div><br>
@@ -44,9 +44,10 @@
     <mat-form-field  class="example-full-width">
   <mat-label>Description</mat-label>
 <input matInput  type="text" name='des'  required
-      [(ngModel)]="project.description" #desCtrl="ngModel">
+      [(ngModel)]="project.description" maxlength="100" #desCtrl="ngModel">
       <mat-error *ngIf="desCtrl.hasError('required')">Description is required</mat-error>
-    
+     
+
       <!-- <mat-hint>Enter Description</mat-hint> -->
     </mat-form-field>
 

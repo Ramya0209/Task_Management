@@ -25,7 +25,7 @@ export class RegisterService{
         }
         return throwError('There is a problem with the service. We are notified & working on it. Please try again later.');
     }
-    getEmployee(id: String): Observable<IEmployee[]> {
+    getEmployee(id: number): Observable<IEmployee[]> {
         
         return this.httpClient.get<IEmployee[]>(`${this.baseUrl}?id=${id}`)
             .pipe(catchError(this.handleError));

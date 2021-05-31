@@ -1,5 +1,5 @@
 export interface IEmployee{
-    id:string;
+    id:number;
     username:string;
     dob:string,
     phonenumber:string;

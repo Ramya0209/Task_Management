@@ -7,9 +7,16 @@
 	   
 		<div class="input-wrapper"> 
 		<mat-form-field style="width:400px" >
-			<mat-label>User ID</mat-label>
-			<input matInput name="id" [(ngModel)]="employee.id" #idCtrl="ngModel" required>
-	  <mat-error *ngIf="idCtrl.touched && idCtrl.errors?.required">User ID is required</mat-error>
+			<mat-label>EMail-ID</mat-label>
+			<input id="email" name="email" #ref_email="ngModel" matInput type="email" email placeholder="Email" [(ngModel)]="employee.email" required>
+                
+           <mat-error *ngIf="!ref_email.valid && ref_email.errors?.required">
+               Email is required
+           </mat-error>
+           
+           <mat-error *ngIf="!ref_email.valid && ref_email.errors?.email">
+               Email is not valid 
+           </mat-error>
 
 		  </mat-form-field>
 		  </div>

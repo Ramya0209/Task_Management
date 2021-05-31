@@ -3,18 +3,19 @@
     <h3 class="reg">REGISTER</h3>
   
    <form (ngSubmit)="onSubmit('Registered','Dismiss',myForm)" #myForm="ngForm">
-     <div class="input-wrapper">
+     <!-- <div class="input-wrapper">
    <mat-form-field style="width:400px" >
      <mat-label>User-ID</mat-label>
-     <input matInput name="id" [(ngModel)]="employee.id" #idCtrl="ngModel" required>
+     <input matInput name="id" [(ngModel)]="employee.id"  maxlength="6" #idCtrl="ngModel" required>
+     <mat-hint style="margin-left:230px ;" >{{idCtrl?.value?.length}}/6</mat-hint>
    <mat-error *ngIf="idCtrl.hasError('required')  && !userid ">User-ID is required</mat-error>
-   <!-- <mat-error *ngIf="userid">User-ID already exist</mat-error> -->
-     </mat-form-field></div>
+   <mat-error *ngIf="userid">User-ID already exist</mat-error> 
+     </mat-form-field></div> -->
      <div class="input-wrapper"><mat-form-field style="width:400px" >
        <mat-label>Username</mat-label>
-       <input matInput name="username" [(ngModel)]="employee.username" #usernameCtrl="ngModel" required>
-     <mat-error *ngIf="usernameCtrl.hasError('required')">Username is required</mat-error>
- 
+       <input matInput name="username" [(ngModel)]="employee.username" [pattern]="unamePattern" #usernameCtrl="ngModel" required>
+     <mat-error *ngIf="!usernameCtrl.valid && usernameCtrl.errors?.required">Username is required</mat-error>
+     <mat-error *ngIf="usernameCtrl.errors?.pattern && !usernameCtrl.valid"> pattern mismatched (use only a-z A-Z && space)</mat-error>
        </mat-form-field></div><div class="input-wrapper">
               <mat-form-field style="width: 250px;" >
          <mat-label>Role</mat-label>
@@ -29,24 +30,37 @@
        </div><div class="input-wrapper">
          <mat-form-field style="width:400px" >
            <mat-label>Email-ID</mat-label>
-           <input matInput name="email" [(ngModel)]="employee.email" #emailCtrl="ngModel"  required>
-         <mat-error *ngIf="emailCtrl.hasError('required')">Email-ID is required</mat-error>
+
+           <!-- <input matInput name="email" [(ngModel)]="employee.email" #emailCtrl="ngModel"  required> -->
+         <!-- <mat-error *ngIf="emailCtrl.hasError('required')">Email-ID is required</mat-error> -->
+
+           <input id="email" name="email" #ref_email="ngModel" matInput type="email" email placeholder="Email" [(ngModel)]="employee.email" required>
+                
+           <mat-error *ngIf="!ref_email.valid && ref_email.errors?.required">
+               Email is required
+           </mat-error>
+           
+           <mat-error *ngIf="!ref_email.valid && ref_email.errors?.email">
+               Email is not valid 
+           </mat-error>
+
      
            </mat-form-field></div><div class="input-wrapper">
            <mat-form-field style="width:400px" >
              <mat-label>phonenumber</mat-label>
-             <input matInput name="contact" [(ngModel)]="employee.phonenumber" #contactCtrl="ngModel" required>
-           <mat-error *ngIf="contactCtrl.hasError('required')">Phone Number is required</mat-error>
-       
+             <input matInput name="contact" [(ngModel)]="employee.phonenumber"  [pattern]="phonePattern" #contactCtrl="ngModel" required>
+             <mat-error *ngIf="!contactCtrl.valid && contactCtrl.errors?.required">phone number is required</mat-error>
+             <mat-error *ngIf="contactCtrl.errors?.pattern && !contactCtrl.valid"> pattern mismatched</mat-error>
+               
              </mat-form-field></div>
              
           
              <div class="input-wrapper"><mat-form-field style="width:400px" >
                <mat-label>Password</mat-label>
                <input type="password" matInput  name="password" autocomplete="off" 
-               [(ngModel)]="employee.password" #passwordCtrl="ngModel" required>
+               [(ngModel)]="employee.password" minlength="8" #passwordCtrl="ngModel" required>
              <mat-error *ngIf="passwordCtrl.hasError('required')">Password is required</mat-error>
-         
+         <mat-error *ngIf="passwordCtrl.errors?.minlength">password atleast have 8 charecter</mat-error>
                </mat-form-field></div>
                <div class="input-wrapper">
                 
@@ -58,15 +72,17 @@
                   <mat-error *ngIf="cpasswordCtrl.hasError('required')"> Confirm password is required
 
                   </mat-error>
-                  <!-- <mat-error *ngIf="passcheck "> Password and Confirm password must be same
-
-                  </mat-error> -->
+                   <mat-error *ngIf="passcheck "> Password and Confirm password must be same </mat-error> 
                
 
                  </mat-form-field></div>
                  
      
      <button class="but"  mat-button  >Register</button>
+     <button class="but"  mat-button  routerLink="/login">Back</button>
    </form>
+
+
+   
  </mat-card>
  </div>

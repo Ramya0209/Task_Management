@@ -18,7 +18,7 @@ export class AdminComponent implements OnInit {
   constructor(public dialog: MatDialog,private _userService:UserService) { }
 
   employee:IEmployee={
-    id:'',
+    id:0,
     username:'',
     password:'',
     cpassword:'',

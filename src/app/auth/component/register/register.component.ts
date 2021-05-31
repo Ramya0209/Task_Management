@@ -4,6 +4,7 @@ import{ IEmployee} from 'src/app/models/login.models';
 import { RegisterService} from './register.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { NgForm } from '@angular/forms';
+import {FormControl,Validators} from "@angular/forms"
 
 @Component({
   selector: 'app-register',
@@ -12,7 +13,7 @@ import { NgForm } from '@angular/forms';
 })
 export class RegisterComponent  {
   employee:IEmployee={
-    id:'',
+    id:0,
    username:'',
     password:'',
     cpassword:'',
@@ -29,6 +30,12 @@ export class RegisterComponent  {
 
 
   }
+  unamePattern = "[a-zA-Z ]*"; 
+  phonePattern = "[0-9 ]*";
+  emailFormControl=new FormControl("",[
+    Validators.required,
+    Validators.email
+  ])
   constructor(private _registerService: RegisterService,private _snackBar: MatSnackBar,private router:Router) { }
   passcheck=false;
   userid=false;
@@ -60,7 +67,7 @@ export class RegisterComponent  {
         else{
           
           this.userid=true;
-          this.employee.id="";
+          this.employee.id=0;
           }
         },
     (err) => console.log(err)
