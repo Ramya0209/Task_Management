@@ -4,6 +4,7 @@ import{ IEmployee} from 'src/app/models/login.models';
 import { RegisterService} from './register.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { NgForm } from '@angular/forms';
+import {FormControl,Validators} from "@angular/forms"
 
 @Component({
   selector: 'app-register',
@@ -29,6 +30,12 @@ export class RegisterComponent  {
 
 
   }
+  unamePattern = "[a-zA-Z ]*"; 
+  phonePattern = "[0-9 ]*";
+  emailFormControl=new FormControl("",[
+    Validators.required,
+    Validators.email
+  ])
   constructor(private _registerService: RegisterService,private _snackBar: MatSnackBar,private router:Router) { }
   passcheck=false;
   userid=false;

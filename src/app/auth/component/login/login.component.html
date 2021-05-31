@@ -8,7 +8,9 @@
 		<div class="input-wrapper"> 
 		<mat-form-field style="width:400px" >
 			<mat-label>User ID</mat-label>
-			<input matInput name="id" [(ngModel)]="employee.id" #idCtrl="ngModel" required>
+			<input matInput name="id" [(ngModel)]="employee.id" maxlength="6"  #idCtrl="ngModel" required>
+			<mat-hint style="margin-left:230px ;padding-top: 8px;" >{{idCtrl?.value?.length}}/6</mat-hint>
+
 	  <mat-error *ngIf="idCtrl.touched && idCtrl.errors?.required">User ID is required</mat-error>
 
 		  </mat-form-field>
