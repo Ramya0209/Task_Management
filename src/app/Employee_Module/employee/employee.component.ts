@@ -19,6 +19,7 @@ export class EmployeeComponent implements OnInit {
 
   employee:IEmployee={
     id:0,
+    user_id:'',
     username:'',
     password:'',
     cpassword:'',

@@ -14,6 +14,7 @@ import {FormControl,Validators} from "@angular/forms"
 export class RegisterComponent  {
   employee:IEmployee={
     id:0,
+    user_id:'',
    username:'',
     password:'',
     cpassword:'',

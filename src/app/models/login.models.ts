@@ -1,5 +1,6 @@
 export interface IEmployee{
     id:number;
+    user_id:string;
     username:string;
     dob:string,
     phonenumber:string;
@@ -13,4 +14,5 @@ export interface IEmployee{
     email:string;
     password:string;
     cpassword:string;
+    newpassword?:string;
 }

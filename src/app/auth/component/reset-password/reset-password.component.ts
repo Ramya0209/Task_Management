@@ -10,6 +10,7 @@ import { ResetPasswordService } from './reset-password.service';
 export class ResetPasswordComponent implements OnInit {
   employee:IEmployee={
     id:0,
+    user_id:'',
    username:'',
     password:'',
     role:'',

@@ -14,7 +14,8 @@ import { UserService } from 'src/app/services/user.service';
 export class ManagerComponent implements OnInit {
   isCollapsed = false;
   employee:IEmployee={
-    id:0,
+    id:0,    
+    user_id:'',
     username:'',
     password:'',
     cpassword:'',
