@@ -21,7 +21,7 @@ import { ProjectService } from 'src/app/services/project.service';
 })
 export class CreateProjectComponent implements OnInit  {
   constructor(private _createprojectService:CreateProjectService,private _snackbar:MatSnackBar,
-    public dialogRef:MatDialogRef<CreateProjectComponent>,private route:Router,private _editProjectService:ProjectService) { }
+    public dialogRef:MatDialogRef<CreateProjectComponent,any>,private route:Router,private _editProjectService:ProjectService) { }
 
   project:IProject={
     id: 0,

@@ -6,6 +6,7 @@ import {MatDialog} from '@angular/material/dialog';
 import {CreateProjectComponent} from '../createproject/createproject.component';
 import { MatFormFieldControl } from '@angular/material/form-field';
 import { ProjectService } from 'src/app/services/project.service';
+import { EditProjectComponent } from '../edit-project/edit-project.component';
 @Component({
   selector: 'app-viewproject-admin',
   templateUrl: './viewproject-admin.component.html',
@@ -19,7 +20,7 @@ export class ViewprojectAdminComponent implements OnInit {
   dataSource!:IProject[];
   editProject:IProject;
   
-  constructor(private _vps:ViewprojectAdminService,public dialog: MatDialog,private _editProjectService:ProjectService) { }
+  constructor(private _vps:ViewprojectAdminService,public dialog: MatDialog,public dialog1: MatDialog,private _editProjectService:ProjectService) { }
   
 
   ngOnInit(): void {
@@ -42,6 +43,15 @@ export class ViewprojectAdminComponent implements OnInit {
         console.log('The dialog was closed');
   
       });
-     
+    
+    }
+    editDialog():void{
+      const dialogRef1 = this.dialog1.open(EditProjectComponent);
+    dialogRef1.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+
+    });
+  }
 }
-}
+
+
