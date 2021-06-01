@@ -3,14 +3,14 @@
     <h3 class="reg">REGISTER</h3>
   
    <form (ngSubmit)="onSubmit('Registered','Dismiss',myForm)" #myForm="ngForm">
-     <!-- <div class="input-wrapper">
+     <div class="input-wrapper">
    <mat-form-field style="width:400px" >
      <mat-label>User-ID</mat-label>
-     <input matInput name="id" [(ngModel)]="employee.id"  maxlength="6" #idCtrl="ngModel" required>
-     <mat-hint style="margin-left:230px ;" >{{idCtrl?.value?.length}}/6</mat-hint>
-   <mat-error *ngIf="idCtrl.hasError('required')  && !userid ">User-ID is required</mat-error>
+     <input matInput name="user_id" [(ngModel)]="employee.user_id"  maxlength="6" #user_idCtrl="ngModel" required>
+     <mat-hint style="margin-left:230px ;" >{{user_idCtrl?.value?.length}}/6</mat-hint>
+   <mat-error *ngIf="user_idCtrl.hasError('required')  && !userid ">User-ID is required</mat-error>
    <mat-error *ngIf="userid">User-ID already exist</mat-error> 
-     </mat-form-field></div> -->
+     </mat-form-field></div>
      <div class="input-wrapper"><mat-form-field style="width:400px" >
        <mat-label>Username</mat-label>
        <input matInput name="username" [(ngModel)]="employee.username" [pattern]="unamePattern" #usernameCtrl="ngModel" required>

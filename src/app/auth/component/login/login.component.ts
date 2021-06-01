@@ -16,6 +16,7 @@ import { UserService } from 'src/app/services/user.service';
   
   employee:IEmployee={
     id:0,
+    user_id:'',
     dob:'',
     username:'',
     password:'',
@@ -40,13 +41,13 @@ constructor(public _loginService: LoginService,private _snackBar: MatSnackBar,pr
    onSubmit(message:string,action:string,form:NgForm){
     
 
-  this._loginService.getEmployee(this.employee.email,this.employee.password).subscribe(
+  this._loginService.getEmployee(this.employee.user_id,this.employee.password).subscribe(
     (response) =>
     {
       if (!response||response.length==0)
       {
-        window.alert("EMail or Password Incorrect");
-        this.employee.email="";
+        window.alert("User ID or Password Incorrect");
+        this.employee.user_id="";
         this.employee.password="";
       }
       else{

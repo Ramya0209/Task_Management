@@ -5,9 +5,9 @@ import { IEmployee } from '../models/login.models';
 import { UserService } from '../services/user.service';
 import { ChangepassService } from './changepass.service';
 
-export interface IPassword extends IEmployee{
-newpassword:string;
-}
+// export interface IPassword extends IEmployee{
+// newpassword:string;
+// }
 
 @Component({
   selector: 'app-changepass',
@@ -18,13 +18,16 @@ export class ChangepassComponent implements OnInit {
   
   pass:IEmployee;
   oldpassword='';
-password:IPassword;
+// password:IPassword;
+newpass='';
   constructor(private _userService:UserService,private _cpass:ChangepassService,private _snackbar:MatSnackBar) { }
 
   ngOnInit(): void {
     this.pass=this._userService.getLoggedInEmployee();
     this.oldpassword=this.pass.password;
     this.pass.password='';
+    this.newpass=this.pass.newpassword!;
+    this.pass.newpassword='';
   }
 onSubmit(message:string,action:string){
   // this.password=this.convertIEmployeeToIPassword(this.pass);
@@ -36,7 +39,8 @@ onSubmit(message:string,action:string){
         window.alert("correct password");
       }
       else{
-        this.pass=this.convertIPasswordToIEmployee(this.password);
+        this.pass=this.convertpasswordToNewPassword(this.pass);
+       
         this._cpass.updatePassword(this.pass).subscribe(
           (result)=>{
             this._snackbar.open(message,action,{duration:2000});
@@ -49,17 +53,16 @@ onSubmit(message:string,action:string){
   )
 }
 
-convertIPasswordToIEmployee(password:IPassword):IEmployee{
-  let employee!: IEmployee;
+convertpasswordToNewPassword(pass:IEmployee){
 
-  employee.id =password.id;
+  pass.password=pass.newpassword!;
 
-  return employee;
+  return pass;
 
 }
-convertIEmployeeToIPassword(pass:IEmployee):IPassword{
-  let password!:IPassword;
-  password.id=pass.id;
-  return password;
-}
+// convertIEmployeeToIPassword(pass:IEmployee):IPassword{
+//   let password!:IPassword;
+//   password.id=pass.id;
+//   return password;
+// }
 }

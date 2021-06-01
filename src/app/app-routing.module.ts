@@ -48,7 +48,7 @@ const routes: Routes = [
       {path: 'viewprojectadmin', component:ViewprojectAdminComponent },
       {path: 'adminreport', component:AdminreportComponent },
       {path: 'completion', component:CompletionComponent },  
-      // {path:'changepassword',component:ChangepassComponent}
+      {path:'changepassword',component:ChangepassComponent}
     ]
   },  
 {
@@ -62,7 +62,7 @@ const routes: Routes = [
     {path:'managerreport',component:ManagerreportComponent},
     {path:"employeereport",component:EmpreportComponent    },
     { path:'',component:ManagerDashboardComponent},
-    // {path:'changepassword',component:ChangepassComponent}
+    {path:'changepassword',component:ChangepassComponent}
   ]
 },
 
@@ -76,7 +76,7 @@ const routes: Routes = [
     {path: 'profile', component:ProfileComponent },
     {path:'task' ,component:EmpTaskComponent},
     {path:'report',component:EmpReportComponent},
-    // {path:'changepassword',component:ChangepassComponent}
+    {path:'changepassword',component:ChangepassComponent}
   ]
 },
 {
