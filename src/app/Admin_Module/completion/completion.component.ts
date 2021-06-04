@@ -1,4 +1,6 @@
+import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
+
 
 // for table
 export interface PeriodicElement {
@@ -17,12 +19,19 @@ interface Project {
 }
 
 
+
+interface Manager {
+value: string;
+viewValue: string;
+}
+
 @Component({
-  selector: 'app-completion',
-  templateUrl: './completion.component.html',
-  styleUrls: ['./completion.component.scss']
+selector: 'app-completion',
+templateUrl: './completion.component.html',
+styleUrls: ['./completion.component.scss']
 })
 export class CompletionComponent implements OnInit {
+
   // table
   displayedColumns: string[] = ['taskname','assignedto','progress'];
   dataSource = ELEMENT_DATA;
@@ -52,3 +61,5 @@ export class CompletionComponent implements OnInit {
 //   }
 
  }
+
+

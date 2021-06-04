@@ -19,13 +19,14 @@ export class ResetPasswordService {
     }
     return throwError('There is a problem with the service. We are notified & working on it. Please try again later.');
 }
-getEmployee(id: String): Observable<IEmployee[]> {
-    
+getEmployee(id: number): Observable<IEmployee[]> {
+    console.log(id);
     return this.httpClient.get<IEmployee[]>(`${this.baseUrl}?id=${id}`)
         .pipe(catchError(this.handleError));
 }
-updatePassword(password:string): Observable<void> {
-  return this.httpClient.patch<void>(`${this.baseUrl}/${password}`,{
+updatePassword(employee:IEmployee): Observable<IEmployee> {
+  console.log(employee);
+  return this.httpClient.put<IEmployee>(`${this.baseUrl}/${employee.id}`,employee,{
     headers: new HttpHeaders({
         'Content-Type': 'application/json'
     })

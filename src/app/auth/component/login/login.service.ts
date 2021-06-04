@@ -34,9 +34,9 @@ export class LoginService{
     }
 
    
-    getEmployee(id: string,password:string): Observable<IEmployee[]> {
+    getEmployee(user_id: string,password:string): Observable<IEmployee[]> {
         
-        return this.httpClient.get<IEmployee[]>(`${this.baseUrl}?id=${id}&password=${password}`)
+        return this.httpClient.get<IEmployee[]>(`${this.baseUrl}?user_id=${user_id}&password=${password}`)
             .pipe(catchError(this.handleError));
     }
 

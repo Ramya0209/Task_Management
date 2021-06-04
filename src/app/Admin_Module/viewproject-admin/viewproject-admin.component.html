@@ -47,7 +47,7 @@
     <ng-container matColumnDef="action" >
       <th mat-header-cell *matHeaderCellDef style="padding-left: 3%;"> Action </th>
       <td mat-cell *matCellDef="let row" >
-        <button mat-icon-button color="primary" title="Edit" style="padding-left: 10%;">
+        <button mat-icon-button color="primary" title="Edit" (click)="editDialog()" style="padding-left: 10%;">
           <mat-icon>edit</mat-icon>
         </button>
         <button mat-icon-button color="accent" title="Delete" >

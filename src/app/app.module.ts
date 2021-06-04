@@ -57,7 +57,13 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import {MatMenuModule} from '@angular/material/menu';
 import { ChangepassComponent } from './changepass/changepass.component';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
+
+
+
+import { MatProgressBarModule } from '@angular/material/progress-bar'
+import { EditProjectComponent } from './Admin_Module/edit-project/edit-project.component';
+
+
 
 registerLocaleData(hi);
 // import { MatFormFieldControl } from '@angular/material/form-field/form-field-control';
@@ -85,6 +91,7 @@ registerLocaleData(hi);
     ViewprojectAdminComponent,
     EmpTaskComponent,
     ViewtaskComponent,
+    EditProjectComponent,
     // EmpProjectComponent,
     // EmpReportComponent
  ChangepassComponent     
@@ -93,12 +100,16 @@ registerLocaleData(hi);
     BrowserModule,AuthModule,SharedModule,MatSelectModule,MatSnackBarModule,MatMenuModule,
     AppRoutingModule,FlexLayoutModule,MatGridListModule,ReactiveFormsModule,MatDialogModule,
     FormsModule,MatCardModule,MatInputModule,MatFormFieldModule,MatTableModule ,MatRadioModule,MatDatepickerModule,MatNativeDateModule,MatCheckboxModule,
+
     MatButtonModule,MatToolbarModule,MatIconModule,MatSidenavModule,MatListModule,BrowserAnimationsModule,HttpClientModule, IconsProviderModule, NzLayoutModule, NzMenuModule,MatProgressBarModule
+
+  
+ 
     
   ],
   providers: [LoginService, { provide: NZ_I18N, useValue: hi_IN }],
   bootstrap: [AppComponent],
-  entryComponents:[CreateProjectComponent,CreatetaskComponent]
+  entryComponents:[CreateProjectComponent,CreatetaskComponent,EditProjectComponent]
 
 })
 export class AppModule { }

@@ -9,7 +9,8 @@ import { ResetPasswordService } from './reset-password.service';
 })
 export class ResetPasswordComponent implements OnInit {
   employee:IEmployee={
-    id:'',
+    id:0,
+    user_id:'',
    username:'',
     password:'',
     role:'',
@@ -34,9 +35,9 @@ onSubmit(){
     (response)=>{
       console.log(response);
 if(!response || response.length==0){
-  window.alert("id");
+  window.alert("password Incorrect");
 }else{
-  this._resetPassword.updatePassword(this.employee.password).subscribe(
+  this._resetPassword.updatePassword(this.employee).subscribe(
     (result)=>{
       console.log(result);
     }
