@@ -1,9 +1,30 @@
 import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
+
+
+// for table
+export interface PeriodicElement {
+  taskname: String;
+  assignedto: string;
+  progress: string;
+}
+const ELEMENT_DATA: PeriodicElement[] = [
+  {taskname: '', assignedto: '', progress: ''},
+]
+
+// for dropdown
+interface Project {
+  value: string;
+  viewValue: string;
+}
+
+
+
 interface Manager {
 value: string;
 viewValue: string;
 }
+
 @Component({
 selector: 'app-completion',
 templateUrl: './completion.component.html',
@@ -18,6 +39,19 @@ managers: Manager[] = [
 {value: 'manager2-1', viewValue: 'Manager2'},
 {value: 'manager3-2', viewValue: 'Manager3'}
 ];
+
+// table
+displayedColumns: string[] = ['taskname','assignedto','progress'];
+dataSource = ELEMENT_DATA;
+// dropdown
+selectedValue: string;
+
+projects: Project[] = [
+  {value: 'project 1', viewValue: 'Project 1'},
+  {value: 'project 2', viewValue: 'Project 2'},
+  {value: 'project 3', viewValue: 'Project 3'}
+];
+
 constructor() { }
 ngOnInit(): void {
 }
@@ -78,3 +112,25 @@ console.log(prog+" percent")
 console.log(pending+" percent")
 }
 }
+
+
+  
+  
+
+  
+  
+  
+  
+  
+  // selectedValue: string;
+
+ 
+
+//   constructor() { }
+
+//   ngOnInit(): void {
+//   }
+
+ 
+
+

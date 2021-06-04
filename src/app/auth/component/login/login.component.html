@@ -8,8 +8,8 @@
 		<div class="input-wrapper"> 
 		<mat-form-field style="width:400px" >
 			<mat-label>User ID</mat-label>
-			<input matInput name="id" [(ngModel)]="employee.id" #idCtrl="ngModel" required>
-	  <mat-error *ngIf="idCtrl.touched && idCtrl.errors?.required">User ID is required</mat-error>
+			<input matInput name="user_id" [(ngModel)]="employee.user_id" #user_idCtrl="ngModel" required>
+	  <mat-error *ngIf="user_idCtrl.touched && user_idCtrl.errors?.required">User ID is required</mat-error>
 
 		  </mat-form-field>
 		  </div>

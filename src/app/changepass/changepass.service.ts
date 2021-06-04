@@ -18,13 +18,13 @@ export class ChangepassService {
     }
     return throwError('There is a problem with the service. We are notified & working on it. Please try again later.');
 }
-getEmployee(id: String,password:string): Observable<IEmployee[]> {
+getEmployee(id: number,password:string): Observable<IEmployee[]> {
         
   return this.httpClient.get<IEmployee[]>(`${this.url}?id=${id}&password=${password}`)
       .pipe(catchError(this.handleError));
 }
-updatePassword(id:string,password:string): Observable<IEmployee[]> {
-  return this.httpClient.patch<IEmployee[]>(`${this.url}?id=${id}&password=${password}`, {
+updatePassword(employee:IEmployee): Observable<IEmployee[]> {
+  return this.httpClient.patch<IEmployee[]>(`${this.url}/${employee.id}`, employee,{
     headers: new HttpHeaders({
         'Content-Type': 'application/json'
     })
