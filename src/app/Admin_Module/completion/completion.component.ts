@@ -30,7 +30,18 @@ const counts = [{status :"completed"},
 {status :"in progress"},
 {status :"pending"},
 {status :"completed"}];
+
+
+// "id": 1,
+// "project_id": 0,
+// "task_id": 0,
+// "user_id": 0,
+// "project_name": "angular",
+// "task_name": "",
+// "progress": "hai"
 //completed
+
+
 const Completionstatus= counts.filter(function(counts:{
 status: string
 }): boolean{
@@ -41,7 +52,7 @@ count += i;
 }
 res = ( count / counts.length ) * 100;
 this.completedPercent = res;
-res=40
+// res=40
 // console.log(res+" percent")
 //in progress
 const progressStatus= counts.filter(function(counts:{
@@ -53,13 +64,13 @@ for (let i = 1; i <= progressStatus.length; i++) {
 count += i;
 console.log(count)
 }
-// prog = ( count / counts.length ) * 100;
-prog=20
+prog = ( count / counts.length ) * 100;
+// prog=20
 this.progressPercent = prog;
 console.log(prog+" percent")
 //pending 
-// this.pendingPercent = counts.length - (this.completedPercent + this.progressPercent )
-pending=20
+this.pendingPercent = counts.length - (this.completedPercent + this.progressPercent )
+// pending=20
 
 this.pendingPercent = pending;
 console.log(res+" percent")
