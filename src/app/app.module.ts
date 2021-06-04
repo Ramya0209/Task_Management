@@ -1,11 +1,9 @@
-
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule ,ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
@@ -59,6 +57,7 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import {MatMenuModule} from '@angular/material/menu';
 import { ChangepassComponent } from './changepass/changepass.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 registerLocaleData(hi);
 // import { MatFormFieldControl } from '@angular/material/form-field/form-field-control';
@@ -94,7 +93,7 @@ registerLocaleData(hi);
     BrowserModule,AuthModule,SharedModule,MatSelectModule,MatSnackBarModule,MatMenuModule,
     AppRoutingModule,FlexLayoutModule,MatGridListModule,ReactiveFormsModule,MatDialogModule,
     FormsModule,MatCardModule,MatInputModule,MatFormFieldModule,MatTableModule ,MatRadioModule,MatDatepickerModule,MatNativeDateModule,MatCheckboxModule,
-    MatButtonModule,MatToolbarModule,MatIconModule,MatSidenavModule,MatListModule,BrowserAnimationsModule,HttpClientModule, IconsProviderModule, NzLayoutModule, NzMenuModule,
+    MatButtonModule,MatToolbarModule,MatIconModule,MatSidenavModule,MatListModule,BrowserAnimationsModule,HttpClientModule, IconsProviderModule, NzLayoutModule, NzMenuModule,MatProgressBarModule
     
   ],
   providers: [LoginService, { provide: NZ_I18N, useValue: hi_IN }],

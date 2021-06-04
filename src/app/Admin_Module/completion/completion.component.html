@@ -1,22 +1,67 @@
-<label for="file" style="margin-left: 3% ;color: rgb(30, 42, 97);font-size: 30px;margin-top: 2%;text-align: center;">OVERALL PROGRESS:</label><br><br>
+<span class="spantag"><u style="color: rgb(69, 69, 155);"><a href="/admin/admindashboard">Dashboard</a></u> / Completion status</span>
 
-<progress id="file" value="33" max="100" style="width: 50%;height: 5%;margin-left: 25%;background-color: crimson;"> 62% </progress>
-<H4 style="text-align: center;">Completed Tasks is 33%</H4><br>
-<progress id="file" value="40" max="100" style="width: 50%;height: 5%;margin-left: 25%;background-color: crimson;"> 62% </progress>
-<H4 style="text-align: center;">In Progress is 40%</H4><br>
-<progress id="file" value="16" max="100" style="width: 50%;height: 5%;margin-left: 25%;background-color: crimson;"> 62% </progress>
-<H4 style="text-align: center;">Pending Tasks is 16%</H4><br>
+<div class="rings">
+  <form>
+    <mat-form-field class="input-wrapper" style="margin-top: 80px; padding-right: 20px;"  appearance="fill">
+      <mat-label >Select Project</mat-label>
+      <mat-select [(ngModel)]="selectedValue" name="project">
+        <mat-option *ngFor="let project of projects" [value]="project.value">
+          {{project.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <h1> Selected project: {{selectedValue}} </h1></form>
+  <div style="padding-left:50px" class="percent1">
+      <svg>
+        <circle cx="70" cy="100" r="70"></circle>
+        <circle cx="70" cy="100" r="70"></circle>
+      </svg><p>Done</p>
+      <div class="number">
+        <h2>75%</h2>
+      </div>
+</div>
+  <div style="padding-left:50px" class="percent2">
+      <svg>
+        <circle cx="70" cy="100" r="70"></circle>
+        <circle cx="70" cy="100" r="70"></circle>
+      </svg><br><p>Doing</p>
+      <div class="number">
+        <h2>33%</h2>
+      </div>
+</div>
+<div style="padding-left:50px" class="percent2">
+  <svg>
+    <circle cx="70" cy="100" r="70"></circle>
+    <circle cx="70" cy="100" r="70"></circle>
+  </svg><br><p>To Do</p>
+  <div class="number">
+    <h2>20%</h2>
+  </div>
+</div>
+</div><br><br><br>
+<!-- <button class="but" style="margin-right: 1000px; margin-left: 60px;" mat-button>View Project Details</button> -->
 
+<!-- code for table -->
+<div class="table">
 
-<select class="form-select" aria-label="Default select example" style="margin-right: 30%;">
-  <option selected>Select Manager</option>
-  <option value="1">Manager 1</option>
-  <option value="2">Manager 2</option>
-  <option value="3">Manager 3</option>
-</select> <br><br>
-<select class="form-select" aria-label="Default select example" style="margin-right: 20%;">
-  <option selected>Select Employee</option>
-  <option value="1">Employee 1</option>
-  <option value="2">Employee 2</option>
-  <option value="3">Employee 3</option>
-</select> 
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef style="padding-left: 10%;"> Sl no </th>
+      <td mat-cell *matCellDef="let element" style="padding-left: 10%;"> {{element.id}} </td>
+    </ng-container> -->
+    <ng-container matColumnDef="taskname">
+      <th mat-header-cell *matHeaderCellDef style="padding-left: 12%;">  Task Name</th>
+      <td mat-cell *matCellDef="let element" style="padding-left: 12%;"> {{element.taskname}} </td>
+    </ng-container>
+    <ng-container matColumnDef="assignedto">
+      <th mat-header-cell *matHeaderCellDef style="padding-left: 20%;"> Assigned to</th>
+      <td mat-cell *matCellDef="let element" style="padding-left: 20%;"> {{element.assignedto}} </td>
+    </ng-container>
+    <ng-container matColumnDef="progress">
+      <th mat-header-cell *matHeaderCellDef style="padding-left: 10%;"> Progress </th>
+      <td mat-cell *matCellDef="let element" style="padding-left: 10%;"> {{element.progress}} </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  </div>
