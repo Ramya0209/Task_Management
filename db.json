@@ -16,37 +16,73 @@
       "postalcode": "",
       "qualification": "",
       "experience": ""
+    },
+    {
+      "id": 2,
+      "user_id": "002",
+      "username": "padma",
+      "password": "12345678",
+      "cpassword": "12345678",
+      "role": "Manager",
+      "email": "xyz@gmail.com",
+      "phonenumber": "962345678",
+      "dob": "",
+      "address": "",
+      "state": "",
+      "country": "",
+      "postalcode": "",
+      "qualification": "",
+      "experience": ""
+    },
+    {
+      "id": 3,
+      "user_id": "003",
+      "username": "vinupriya",
+      "password": "12345678",
+      "cpassword": "12345678",
+      "role": "Manager",
+      "email": "xyz@gmail.com",
+      "phonenumber": "962345678",
+      "dob": "",
+      "address": "",
+      "state": "",
+      "country": "",
+      "postalcode": "",
+      "qualification": "",
+      "experience": ""
+    },
+    {
+      "id": 4,
+      "user_id": "004",
+      "username": "jeevitha",
+      "password": "12345678",
+      "cpassword": "12345678",
+      "role": "Employee",
+      "email": "xyz@gmail.com",
+      "phonenumber": "962345678",
+      "dob": "",
+      "address": "",
+      "state": "",
+      "country": "",
+      "postalcode": "",
+      "qualification": "",
+      "experience": ""
     }
   ],
   "Users": [],
   "projects": [
     {
-      "id": 1,
-      "projectname": "angular",
-      "startdate": "2021-05-01T18:30:00.000Z",
-      "enddate": "2021-05-11T18:30:00.000Z",
+      "id": 3,
+      "projectname": "mysql",
+      "assignedto": "padma",
+      "startdate": "2021-06-22T18:30:00.000Z",
+      "enddate": "2021-06-14T18:30:00.000Z",
       "priority": "1",
-      "description": "web designing"
-    },
-    {
-      "id": 2,
-      "projectname": "angular",
-      "startdate": "2021-05-25T18:30:00.000Z",
-      "enddate": "2021-05-30T18:30:00.000Z",
-      "priority": "0",
-      "description": "hafshagfsd efadfd"
+      "description": "dghdz"
     }
   ],
   "tasks": [
-    {
-      "id": 1,
-      "projectname": "angular",
-      "taskname": "ang1",
-      "startdate": "2021-05-09T18:30:00.000Z",
-      "enddate": "2021-05-12T18:30:00.000Z",
-      "priority": "1",
-      "description": "task"
-    }
+    
   ],
   "reports": [
     {

@@ -9,14 +9,15 @@
       <h3 class="reg">CREATE TASK</h3>
     <form  (ngSubmit)="onSubmit('Task Created Successfully','Dismiss',myForm)" #myForm="ngForm"><br>
       <div class="input-wrapper">
-  <mat-form-field  >
-    <mat-label>Project Name</mat-label>
-        <input matInput  name='title' required
-          [(ngModel)]="task.projectname" #titleCtrl="ngModel" >
-        <!-- <mat-hint>Enter project title</mat-hint> -->
-        <mat-error *ngIf="titleCtrl.hasError('required')" >Project Name is required</mat-error>
-      </mat-form-field>
-    </div><br>
+      <mat-form-field appearance="fill" style="width:320px">
+          <mat-label>Project Name</mat-label>
+          <mat-select [(ngModel)]="task.projectname" name="assignedto">
+            <mat-option *ngFor="let pro of projectName" [value]="pro.projectname">
+              {{pro.projectname}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
     <div class="input-wrapper">
 <mat-form-field  >
   <mat-label>Task Name</mat-label>

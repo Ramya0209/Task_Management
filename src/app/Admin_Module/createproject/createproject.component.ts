@@ -26,12 +26,13 @@ export class CreateProjectComponent implements OnInit  {
   project:IProject={
     id: 0,
     projectname: '',
+    assignedto:'',
     startdate: '',
     enddate: '',
     priority: '',
     description: '',
   }
- 
+ managerName:any;
   onNoClick(){
     this.dialogRef.close();
   }
@@ -53,17 +54,13 @@ export class CreateProjectComponent implements OnInit  {
     }
 }
 ngOnInit(): void {
-  // this.getUser();
+  this._createprojectService.getManagerName().subscribe(
+    (result)=>{
+      this.managerName=result;
+    }
+  ),
+  (err)=>console.log(err)
   }
-  // getUser(){
-  // this._createprojectService.getUserId(this.employee.id).subscribe(
-  //   (response) =>
-  //   {
-  //     console.log(response);
-      
-  //   }
-  // );
-  // }
-
+  
 }
 

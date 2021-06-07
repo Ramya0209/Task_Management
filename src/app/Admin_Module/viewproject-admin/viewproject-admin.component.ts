@@ -19,7 +19,7 @@ export class ViewprojectAdminComponent implements OnInit {
   displayedColumns: string[] = ['projectname', 'startdate','enddate', 'priority','description','action'];
   dataSource!:IProject[];
   editProject:IProject;
-  
+  searchKey:string;
   constructor(private _vps:ViewprojectAdminService,public dialog: MatDialog,public dialog1: MatDialog,private _editProjectService:ProjectService) { }
   
 
@@ -52,6 +52,7 @@ export class ViewprojectAdminComponent implements OnInit {
 
     });
   }
+  
 }
 
 

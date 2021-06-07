@@ -4,6 +4,7 @@ import { ITask } from 'src/app/models/task.models';
 import {MatDialogRef} from '@angular/material/dialog';
 import { NgForm } from '@angular/forms';
 import { CreatetaskService } from './createtask.service';
+import { IProject } from 'src/app/models/project.models';
 @Component({
   selector: 'app-createtask',
   templateUrl: './createtask.component.html',
@@ -19,10 +20,17 @@ export class CreatetaskComponent implements OnInit {
     priority: '',
     description: '',
   }
+  projectName:any;
   constructor(private _createtaskService:CreatetaskService,private _snackbar:MatSnackBar,
     public dialogRef:MatDialogRef<CreatetaskComponent>) { }
 
   ngOnInit(): void {
+    this._createtaskService.getProjectName().subscribe(
+      (result)=>{
+        this.projectName=result;
+      }
+    ),
+    (err)=>console.log(err);
   }
   onNoClick(){
     this.dialogRef.close();
