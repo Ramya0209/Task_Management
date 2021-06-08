@@ -5,20 +5,24 @@
   <form>
     <mat-form-field class="input-wrapper" style="margin-top: 80px; padding-right: 10px;"  appearance="fill">
       <mat-label >Select Project</mat-label>
-      <mat-select [(ngModel)]="selectedValue" name="project">
-        <mat-option *ngFor="let project of projects" [value]="project.value">
-          {{project.viewValue}}
+      <mat-select name="project">
+        <mat-option *ngFor="let project of ProjectName" [value]="project.projectname" (click)="progress()" >
+          {{project.projectname}}
         </mat-option>
       </mat-select>
     </mat-form-field>
-    <h1> Selected project: {{selectedValue}} </h1></form>
+    <h1>
+       <!-- Selected project: {{selectedValue}} -->
+       </h1></form>
   <div style="padding-left:50px" class="percent1">
       <svg>
         <circle cx="70" cy="100" r="70"></circle>
         <circle cx="70" cy="100" r="70"></circle>
       </svg><p>Done</p>
       <div class="number">
-        <h2>75%</h2>
+        <h2>75%
+          <!-- {{completedPercent}} -->
+        </h2>
       </div>
 </div>
   <div style="padding-left:50px" class="percent2">
@@ -27,7 +31,9 @@
         <circle cx="70" cy="100" r="70"></circle>
       </svg><br><p>Doing</p>
       <div class="number">
-        <h2>33%</h2>
+        <h2>40%
+          <!-- {{progressPercent}} -->
+        </h2>
       </div>
 </div>
 <div style="padding-left:50px" class="percent2">
@@ -36,7 +42,9 @@
     <circle cx="70" cy="100" r="70"></circle>
   </svg><br><p>To Do</p>
   <div class="number">
-    <h2>20%</h2>
+    <h2>40%
+      <!-- {{pendingPercent}} -->
+    </h2>
   </div>
 </div>
 </div><br><br><br>

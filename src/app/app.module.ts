@@ -62,6 +62,7 @@ import { ChangepassComponent } from './changepass/changepass.component';
 
 import { MatProgressBarModule } from '@angular/material/progress-bar'
 import { EditProjectComponent } from './Admin_Module/edit-project/edit-project.component';
+import CompletionService from './Admin_Module/completion/completion.service';
 
 
 
@@ -107,7 +108,7 @@ registerLocaleData(hi);
  
     
   ],
-  providers: [LoginService, { provide: NZ_I18N, useValue: hi_IN }],
+  providers: [LoginService, { provide: NZ_I18N, useValue: hi_IN }, CompletionService ],
   bootstrap: [AppComponent],
   entryComponents:[CreateProjectComponent,CreatetaskComponent,EditProjectComponent]
 

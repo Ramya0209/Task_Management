@@ -1,5 +1,6 @@
 import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
+import CompletionService from './completion.service';
 
 
 // for table
@@ -13,10 +14,10 @@ const ELEMENT_DATA: PeriodicElement[] = [
 ]
 
 // for dropdown
-interface Project {
-  value: string;
-  viewValue: string;
-}
+// interface Project {
+//   value: string;
+//   viewValue: string;
+// }
 
 
 
@@ -44,16 +45,23 @@ managers: Manager[] = [
 displayedColumns: string[] = ['taskname','assignedto','progress'];
 dataSource = ELEMENT_DATA;
 // dropdown
-selectedValue: string;
+// selectedValue: string;
 
-projects: Project[] = [
-  {value: 'project 1', viewValue: 'Project 1'},
-  {value: 'project 2', viewValue: 'Project 2'},
-  {value: 'project 3', viewValue: 'Project 3'}
-];
+// projects: Project[] = [
+//   {value: 'project 1', viewValue: 'Project 1'},
+//   {value: 'project 2', viewValue: 'Project 2'},
+//   {value: 'project 3', viewValue: 'Project 3'}
+// ];
 
-constructor() { }
+ProjectName:any;
+
+constructor(private _completionservice:CompletionService) { }
 ngOnInit(): void {
+  this._completionservice.getProjectname().subscribe(
+    (response)=>{
+      this.ProjectName=response;
+    }
+  )
 }
 progress() {
 let count =0;
@@ -128,8 +136,8 @@ console.log(pending+" percent")
 
 //   constructor() { }
 
-//   ngOnInit(): void {
-//   }
+  // ngOnInit(): void {
+  // }
 
  
 
