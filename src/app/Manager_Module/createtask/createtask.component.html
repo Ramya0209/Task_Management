@@ -72,6 +72,18 @@
         </mat-select>
       </mat-form-field>
     </div> -->
+    <div class="input-wrapper">
+      <mat-form-field appearance="fill"  style="width:320px">
+        <mat-label>Assigned To</mat-label>
+        <mat-select [(ngModel)]="task.assignedto" name="assignedto" #assignedto='ngModel'>
+          <mat-option *ngFor="let assign of employeeName" [value]="assign.username">
+            {{assign.username}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+
     <button mat-raised-button class="btn" color="primary" style="margin-top: 40px;">Create</button><br>
   </form>
   </mat-card>  

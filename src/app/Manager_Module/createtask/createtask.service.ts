@@ -2,6 +2,7 @@ import { HttpClient,  HttpErrorResponse, HttpHeaders } from '@angular/common/htt
 import { Injectable } from '@angular/core';
 import { throwError, Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { IEmployee } from 'src/app/models/login.models';
 import { IProject } from 'src/app/models/project.models';
 import { ITask } from 'src/app/models/task.models';
 
@@ -11,6 +12,8 @@ import { ITask } from 'src/app/models/task.models';
 export class CreatetaskService {
   baseUrl = 'http://localhost:3000/tasks';
   Url='http://localhost:3000/projects'
+  url='http://localhost:3000/employees?role=Employee';
+
   constructor(private httpClient: HttpClient) { }
   private handleError(errorResponse: HttpErrorResponse) {
     if (errorResponse.error instanceof ErrorEvent) {
@@ -32,4 +35,10 @@ getProjectName():Observable<IProject>{
     return this.httpClient.get<IProject>(this.Url)
     .pipe(catchError(this.handleError));
 }
+
+getEmployeeName():Observable<IEmployee>{
+    return this.httpClient.get<IEmployee>(this.url)
+    .pipe(catchError(this.handleError));
+}
+
 }

@@ -19,8 +19,10 @@ export class CreatetaskComponent implements OnInit {
     enddate: '',
     priority: '',
     description: '',
+    assignedto: ''
   }
   projectName:any;
+  employeeName: any;
   constructor(private _createtaskService:CreatetaskService,private _snackbar:MatSnackBar,
     public dialogRef:MatDialogRef<CreatetaskComponent>) { }
 
@@ -31,6 +33,16 @@ export class CreatetaskComponent implements OnInit {
       }
     ),
     (err)=>console.log(err);
+
+    this._createtaskService.getEmployeeName().subscribe(
+      (result)=>{
+        this.employeeName=result;
+      }
+    ),
+    (err)=>console.log(err);
+
+     
+
   }
   onNoClick(){
     this.dialogRef.close();
